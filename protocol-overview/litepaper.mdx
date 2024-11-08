@@ -3,7 +3,7 @@ title: "Litepaper"
 description: "Whitepaper link: [Read Whitepaper](https://github.com/heurist-network/whitepaper/blob/main/Heurist_Whitepaper.pdf)"
 ---
 
-### What is Heurist and Why Heurist?
+## What is Heurist and Why Heurist?
 
 Heurist is a decentralized GPU cloud dedicated to AI compute. The foundation of Heurist is a DePIN protocol where GPU owners can supply compute resources permissionlessly, and users can run AI or other GPU-heavy workloads with simple API/SDK access. Using our cost-efficient and scalable infrastructure, we are building an open ecosystem that empowers developers to create, deploy and monetize innovative AI solutions.
 
@@ -80,11 +80,11 @@ All released under open source licenses.
 
 See the entire ecosystem and 3rd-party integration partners at [https://heurist.ai/ecosystem](https://heurist.ai/ecosystem)
 
-### Protocol Overview
+## Protocol Overview
 
 Heurist is designed to create a permissionless, efficient, and user-friendly decentralized GPU cloud. Here's a more detailed look at its key components:
 
-**Compute Layer**
+### Compute Layer
 
 * **Compute Nodes**: These are the fundamental units of the compute resources, representing individual GPUs, or fractional GPUs (created from NVIDIA's Time Slicing and Multi-Instance GPU techniques). Both consumer-grade and datacenter-grade GPU owners can join as compute providers (miners). It's completely permissionless to supply compute, and no fixed-term commitment is required, making it an ideal case for monetizing idle compute resources.
 
@@ -106,7 +106,7 @@ Auto scaling is natively supported in the protocol for pod deployment. The syste
     style={{ width: '80%', display: 'block', margin: '0 auto' }}
   />
 
-**Orchestration Layer**
+### Orchestration Layer
 
 Heurist is building a soverign layer 2 chain to coordinate the ecosystem and cloud operations. Specifically, we build an Elastic Chain using ZK Stack, which brings several key benefits:
 
@@ -124,11 +124,15 @@ The sequencer of the layer 2 chain doubles as a router for serverless compute re
     style={{ width: '80%', display: 'block', margin: '0 auto' }}
   />
   
-**Application Layer**
+### Application Layer
+
+#### Frontends
 
 Anyone can build frontends to interface with the protocol. The concept of "frontend" in Heurist ecosystem extends beyond traditional web interfaces. It encompasses any entry point for external users to access the distributed compute cloud. A frontend may be a web application, a mobile app, an API gateway, or an integration into specialized industry interfaces.
 
 Frontends receive a share of the revenue generated from their traffic, incentivizing development and maintenance. By not having a single, official interface controlled by the protocol developers, Heurist avoids centralization of power and influence.
+
+#### Payment Gateways
 
 Payment gateways are designed to cater the needs of both Web2 and Web3 users. Primarily there are two payment approaches:
 
