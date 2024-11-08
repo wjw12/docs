@@ -1,0 +1,80 @@
+---
+title: "Mining"
+description: "Earn Heurist Tokens by running AI inference on your NVIDIA GPUs! Before Heurist Chain is live on mainnet and continuous emission mechanism is implemented, we use points to measure the contribution and allocate rewards in multiple phases."
+---
+
+## 🦙  **Llama Points and**🧚‍♀️ **Waifu Points**
+
+The rewards are distributed in two categories: one for image generation models and the other for Large Language Models (LLMs).
+
+* 🦙  Llama Points, designated for LLM miners
+
+* 🧚‍♀️  Waifu Points, designated for Stable Diffusion miners.
+
+**Point allocation rules**
+
+Points are emitted continuously to compute providers. View your status on [https://heurist.ai/portal](https://heurist.ai/portal)
+
+The amount of points rewarded to compute jobs depend on the complexity of the job, hardware requirement, and latency.
+
+**Image Generation models (Earn** 🧚‍♀️ **Waifu Points)**
+
+Base reward is proportional to the number of pixels in an image, and the number of iterations (sampling steps). Multipliers depend on the model category.
+
+| Category                                 | Multiplier               | Minimum GPU         |
+| ---------------------------------------- | ------------------------ | ------------------- |
+| Stable Diffusion 1.5 checkpoint and LoRA | 0.3                      | 3070, 4060Ti, A4000 |
+| Stable Diffusion XL checkpoint           | 1                        | 3090, 4080, A4500   |
+| Stable Diffusion XL LoRA                 | 1.2                      | 3090, 4080, A4500   |
+| Flux                                     | 0 (Temporarily Disabled) | 4090, A100          |
+
+> Tips about GPU series: Within each consumer series (30-series, 40-series) the compute power (measured in TFLOPs) of GPUs increase as the last 2 digits increase.
+>
+> Approximately: 3060 \< 3070 \< 3080 \< 3090; 4060 \< 4070 \< 4080 \< 4090; those with "Ti" are slightly more powerful than the same number without "Ti"
+>
+> Datacenter grade GPUs are different. A4000 \< A4500 \< A5000 \< A100 \< H100
+
+**LLMs (Earn** 🦙 **Llama Points)**
+
+Base reward is proportional to the input and output token length of an inference request (["token" in LLM means a small chunk of texts](https://blog.devgenius.io/understanding-tokens-and-tokenization-in-large-language-models-1058cd24b944), usually a word or multiple words). Multipliers depend on the model category.
+
+VRAM is the most important factor for GPUs running LLMs.
+
+| Model ID                     | Multiplier | VRAM |
+| ---------------------------- | ---------- | ---- |
+| dolphin-2.9-llama3-8b        | 0.5x       | 24GB |
+| hermes-3-llama3.1-8b         | 0.5x       | 24GB |
+| theia-llama-3.1-8b           | 0.5x       | 24GB |
+| openhermes-mixtral-8x7b-gptq | 1x         | 40GB |
+
+**Heurist Imaginaries NFT Multiplier Rules**
+
+Details: [https://snapshot.org/#/heurist.eth/proposal/0x508c8441c2fd2c33b717489fdbd8cba9df55666d6a42310d7d837f2f5ae9a2e2](https://snapshot.org/#/heurist.eth/proposal/0x508c8441c2fd2c33b717489fdbd8cba9df55666d6a42310d7d837f2f5ae9a2e2)
+
+Before TGE, Heurist Imaginaries holders get boosted mining rewards. The multiplier depends on the number of NFTs that a wallet holds.
+
+Each NFT can boost up to 3 GPUs.
+
+**StHEU Multiplier Rules**
+
+After TGE, stHEU holders get boosted mining rewards. Multiplier rules TBD
+
+## How to Participate
+
+1. Bring your own GPU
+
+Whether you're a gamer with a high-end setup, a former Ethereum miner with unused GPUs, an AI researcher with occasionally idle GPUs, or a data center owner with surplus capacity, you can download the miner program at [https://github.com/heurist-network/miner-release](https://github.com/heurist-network/miner-release) and set up a miner node. For detailed hardware specifications and step-by-step guide, please visit our [Miner Guide page](/guides/miner-guide)
+
+1. Rent managed nodes
+
+Not everyone has the required GPU hardware, but that shouldn't stop you from participating in our testnet. We provide managed mining node service to our community at a competitive price compared to market rate. Our skilled team of engineers will handle the setup of mining machines and software on your behalf while you can relax and watch your rewards grow daily.
+
+### Anti-Cheat
+
+The input and output of every compute job is stored and being tracked by an asynchronous monitoring system. Heurist team reserves the right to slash testnet points of miners demonstrating malicious activities to game the reward system including and not limited to:
+
+* Submit incorrect or low-quality results
+
+* Tamper with downloaded model files
+
+* Tamper with device and latency metrics data

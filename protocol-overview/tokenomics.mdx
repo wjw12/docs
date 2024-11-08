@@ -1,0 +1,109 @@
+---
+title: "Tokenomics"
+---
+
+### HEU Token
+
+HEU (pronounced as "hue") is the native token of Heurist Protocol. The maximum supply is 1,000,000,000. HEU token provides a default mechanism to store and exchange value in the Heurist ecosystem. The utilities include:
+
+* Pay for compute resources
+
+* Stake to secure the network and earn protocol fees
+
+* Vote on governance decisions
+
+* Serve as the gas token for transactions in the Heurist Chain
+
+### Distribution
+<img 
+    src="..\images\protocol-overview\token_distribution.jpg" 
+    alt="token_distribution"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+| Category                                | Token Amount | % of Total Supply | TGE Unlock % | Cliff (months) | Total Vesting (months) |
+| --------------------------------------- | ------------ | ----------------- | ------------ | -------------- | ---------------------- |
+| Season 1 Testnet Miners (11k addresses) | 50,000,000   | 5.00              | 100          | 0              | 0                      |
+| Liquidity                               | 27,500,000   | 2.8               | 100          | 0              | 0                      |
+| Marketing Reserve                       | 25,000,000   | 2.50              | 100 (TBD)    | 0              | 0                      |
+| Imaginaries NFT Airdrop                 | 17,500,000   | 1.75              | 100          | 0              | 0                      |
+| Grants Program                          | 300,000      | 0.03              | 100          | 0              | 0                      |
+| Unallocated Grants                      | 2,200,000    | 0.22              | 0            | 3              | 0                      |
+| Private Angels and VC                   | 60,000,000   | 6.00              | 0            | 3              | 24                     |
+| Team and Advisors                       | 150,000,000  | 15.00             | 0            | 3              | 24                     |
+| Mining (Exclusing Season 1)             | 500,000,000  | 50.00             | 0            | 3              | 120                    |
+| Protocol Treasury                       | 167,500,000  | 16.7              | 0            | 6              | 48                     |
+
+### Initial Distribution
+
+| Category                          | Initial HEU Supply |
+| --------------------------------- | ------------------ |
+| Airdrop to miners (on ZKsync Era) | 50000000           |
+| Airdrop to Imaginaries (on ETH)   | 14000000           |
+| Ecosystem Grants                  | 300000             |
+| KOLs                              | 1000000            |
+| Initial Liquidity (DEX and CEX)   | 28000000           |
+| Marketing Reserve                 | 20000000           |
+
+<img 
+    src="..\images\protocol-overview\heu_supply.png" 
+    alt="heu_supply"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+
+### FAQ
+
+1. Where will the token be traded?
+
+DEX: Uniswap V3 on Ethereum mainnet and ZKsync
+
+CEX: To be announced
+
+1. What is the marketing reserve?
+
+It is for exchange listing, airdrop to the community, KOL marketing, giveaways, etc. Not going to be liquid all at once.
+
+1. What's the plan for Imaginaries NFT airdrop?
+
+We will continue to give away NFTs to the top community contributors and campaign winners (See [Imaginaries NFT](/ecosystem/imaginaries-nft)). The above distribution sheet is based on a projection of 400 liquid NFTs at TGE. The NFT giveaway will continue after the TGE.
+
+1. How to participate in IDO/IEO/public sale?
+
+There will be no public sale.
+
+1. What's the initial price?
+
+The initial price will be determined by the average trading price of Imaginaries NFT over a period of time before TGE. This ensures a fair pre-market price discovery.
+
+### Dynamic Emission for Compute Providers
+
+50% of total HEU token supply (excluding season 1 testnet mining) are allocated to protocol emissions, designed to ensure the supply of compute resources and attract new community members, similar to Proof of Work (PoW) mining. However, DePIN protocols like Heurist differ from PoW systems in one crucial aspect: the physical resources supplied (in Heurist’s case, GPUs) should match the real demand for these resources. Heurist balance the compute supply with the demand by controlling the protocol emission rate based on protocol revenue, defined as the sum of compute payments from users.
+
+Before the mainnet is activated and a continuous emission is implemented (miners get token rewards per block), we plan to allocate pre-mainnet mining rewards in 3 phases.
+
+**Phase 1**: 5% of total token supply airdropped to all miners at a snapshot taken at July 19th, 2024. See [Season 1 (Ended)](/protocol-overview/mining/season-1-ended)
+
+**Phase 2**: a dynamic amount of tokens, min 400,000 per week and max 2,000,000 per week, accumulated to all miners at weekly snapshots. See [Season 2 (Ongoing)](/protocol-overview/mining/season-2-ongoing)
+
+**Phase 3**: a dynamic amount of tokens (amount TBD) accumulated to all miners in a continuous stream.
+
+The data and insights collected from each phase will be critical to help calibrate and determine the mainnet emission mechanism.
+
+After these 3 phases, mainnet emission will go live. Team and the protocol governance houses reserve the right to adjust the following emission schedules.
+
+The emission rate of mainnet is determined by two parameters
+
+* Maximum emission rate: 5% per year
+
+* Baseline emission rate: 1.25 per year
+
+The actual emission rate is dynamically decided by the protocol revenue.
+
+<img 
+    src="..\images\protocol-overview\anualized_emission.jpg" 
+    alt="anualized_emission"
+    style={{ width: '100%', display: 'block', margin: '0 auto' }}
+  />
+
+During periods of low demand, the lower emission rate prevents oversupply of resources. As demand increases, the rising emission rate attracts more providers to the network. This dynamic emission mechanism aims to achieve elasticity in both token distribution and compute resource provision by providing a flexible and responsive way to incentivize network participation.

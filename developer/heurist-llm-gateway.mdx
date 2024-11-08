@@ -1,0 +1,58 @@
+---
+title: "Heurist LLM Gateway"
+description: "Transform your AI capabilities with Heurist Gateway, an OpenAI-compatible LLM API endpoint. Seamlessly integrate with open source LLMs using the familiar OpenAI SDK and unlock the power of decentralized AI at a low cost. Make changes with just 3 lines of code and start integrating right away. Check out the example below to see how easy it is!"
+---
+
+<CodeGroup>
+  ```node Node
+  import OpenAI from "openai";
+
+  const openai = new OpenAI({
+    apiKey: process.env["HEURIST_API_TOKEN"],
+    baseURL: "https://llm-gateway.heurist.xyz",
+  });
+
+  const completions = await openai.chat.completions.create({
+    model: "mistralai/mixtral-8x7b-instruct",
+    messages: [
+      {
+        role: "user",
+        content: "Write rap lyrics about Ethereum",
+      },
+    ],
+    maxTokens: 64,
+    stream: true,
+  });
+
+  for await (const part of completions) {
+    process.stdout.write(part.choices[0]?.delta?.content || "");
+  }
+  ```
+
+  ```python Python
+  from openai import OpenAI
+
+  client = OpenAI(
+      api_key="YOUR_HEURIST_API_TOKEN",
+      base_url="https://llm-gateway.heurist.xyz"
+  )
+
+  completion = client.chat.completions.create(
+      model="mistralai/mixtral-8x7b-instruct",
+      messages=[
+          {
+              "role": "user",
+              "content": "Write rap lyrics about Ethereum"
+          }
+      ],
+      max_tokens=64,
+      stream=True
+  )
+
+  for chunk in completion:
+      print(chunk.choices[0].delta.content or "", end="", flush=True)
+  ```
+</CodeGroup>
+
+For more examples, check [https://github.com/heurist-network/dev-examples](https://github.com/heurist-network/dev-examples)
+

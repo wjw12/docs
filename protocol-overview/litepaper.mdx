@@ -1,0 +1,212 @@
+---
+title: "Litepaper"
+description: "Whitepaper link: [Read Whitepaper](https://github.com/heurist-network/whitepaper/blob/main/Heurist_Whitepaper.pdf)"
+---
+
+### What is Heurist and Why Heurist?
+
+Heurist is a decentralized GPU cloud dedicated to AI compute. The foundation of Heurist is a DePIN protocol where GPU owners can supply compute resources permissionlessly, and users can run AI or other GPU-heavy workloads with simple API/SDK access. Using our cost-efficient and scalable infrastructure, we are building an open ecosystem that empowers developers to create, deploy and monetize innovative AI solutions.
+
+Existing GPU clouds have made strides in creating an "Airbnb of GPUs" where users rent GPUs directly. However, it requires technical expertise and additional labor costs to manage the GPU machines, and it's challenging to scale compute resources up or down on demand. These limit the adoption of GPU DePINs.
+
+Heurist embraces serverless compute in the core protocol design. What is serverless? It is a concept that abstracts the infrastructure away from applications. There are no virtual machines to manage, and no software framework dependencies to set up. Heurist adopts Platform-as-a-Service (PaaS) model, similar to AWS SageMaker and HuggingFace. We provide the ability to scale resources dynamically based on real-time ever-changing demand. The heavy-lifting infrastructure management is abstracted away behind intuitive easy-to-use APIs and frontends.
+
+The primary focus of our service is on AI inference. It's estimated that 90% of the compute resource consumed in an AI model's lifecycle is for inference. Although AI training requires a large number of inter-connected GPUs clustered in large-scale datacenters optimized for network bandwidth and energy, AI inference can be efficiently executed on one single GPU or one machine with multiple GPUs. The nature of AI inference compute makes it the ideal type of workload to be deployed in a globally distributed GPU network.
+
+A wide range of GPU compute tasks can be supported by Heurist, not limited to AI inference, but including training of small language models, model fine-tuning, and ZK proof generation. The key is that these tasks do not require intensive communication between network nodes, and that allows us to dynamically schedule GPU resources easily.
+
+<Frame caption={
+  <>
+    Global generative AI market growth. Source: 
+    <button onClick={() => window.open('https://www.statista.com/outlook/tmo/artificial-intelligence/generative-ai/worldwide', '_blank')}>
+      https://www.statista.com/outlook/tmo/artificial-intelligence/generative-ai/worldwide 
+    </button>
+  </>
+}>
+  <img 
+    src="..\images\protocol-overview\market_growth_chart.png" 
+    alt="market_growth_chart"
+    style={{ width: '100%', display: 'block', margin: '0 auto' }}
+  />
+</Frame>
+
+
+ <img 
+    src="..\images\protocol-overview\inference-vs-training.jpg" 
+    alt="Inference vs Training"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+To demonstrate the power of Heurist's serverless GPU DePIN, Heurist team has built multiple free-to-use AI apps and services including
+<CardGroup cols={2}>
+  <Card
+    title="Heurist Imagine"
+    icon="image"
+    href="https://imagine.heurist.ai/"
+  >
+    Image generator supporting Stable Diffusion and Flux
+  </Card>
+  <Card
+    title="Pondera"
+    icon="comment"
+    href="https://pondera.heurist.ai/"
+  >
+    AI chat assistant for a variety of tasks
+  </Card>
+  <Card
+    title="Heurist Search"
+    icon="search"
+    href="https://search.heurist.ai/"
+  >
+    AI-powered search engine for efficient results
+  </Card>
+  <Card
+    title="LLM Gateway"
+    icon="code"
+    href="/developer/heurist-llm-gateway"
+  >
+    OpenAI-compatible API service for integration
+  </Card>
+  <Card
+    title="Babel Discord Bot"
+    icon="discord"
+    href="https://github.com/heurist-network/babel-discord-bot"
+  >
+    Translation bot for Discord servers
+  </Card>
+</CardGroup>
+
+All released under open source licenses.
+
+See the entire ecosystem and 3rd-party integration partners at [https://heurist.ai/ecosystem](https://heurist.ai/ecosystem)
+
+### Protocol Overview
+
+Heurist is designed to create a permissionless, efficient, and user-friendly decentralized GPU cloud. Here's a more detailed look at its key components:
+
+**Compute Layer**
+
+* **Compute Nodes**: These are the fundamental units of the compute resources, representing individual GPUs, or fractional GPUs (created from NVIDIA's Time Slicing and Multi-Instance GPU techniques). Both consumer-grade and datacenter-grade GPU owners can join as compute providers (miners). It's completely permissionless to supply compute, and no fixed-term commitment is required, making it an ideal case for monetizing idle compute resources.
+
+* **Pods**: These are self-contained, deployable workload units that use GPUs. Pods specify their hardware and software requirements, allowing for precise matching with suitable compute nodes. A pod can be an AI model, a workflow coordinating multiple AI models, fine-tuning-as-a-service software, or a ZK proof generation service. Our system dynamically adjusts the number of active compute nodes hosting each pod based on workload requirements, ensuring optimal resource allocation and cost-efficiency.
+
+* **Validation System**: We employ a crypto-economic validation system to ensure the integrity and reliability of compute results. This includes staking mechanisms and various verification methods tailored to different types of workloads.
+
+<img 
+    src="..\images\protocol-overview\node_pod_combined.jpg" 
+    alt="node_pod_combined"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+Auto scaling is natively supported in the protocol for pod deployment. The system can both scale up to meet increased workload requirements and scale down during periods of lower demand. The number of active compute nodes hosting a pod is dynamically adjusted based on predefined metrics such as GPU utilization and the number of pending jobs, and also affected by token voting. When there is no demand, the cost and resource utilization can be completely eliminated ("scale-to-zero"), making the system efficient for workloads with variable or intermittent processing needs.
+
+<img 
+    src="..\images\protocol-overview\scaling.jpg" 
+    alt="scaling"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+**Orchestration Layer**
+
+Heurist is building a soverign layer 2 chain to coordinate the ecosystem and cloud operations. Specifically, we build an Elastic Chain using ZK Stack, which brings several key benefits:
+
+* **High throughput with low costs**: Micro-transactions are common in a cloud computing environment with pay-per-use pricing model. ZK chain aggregates changes to the same storage slots across multiple transactions into one data slot update (state-diff model), which significantly reduces the gas costs.
+
+* **Interoperability**: As part of the Elastic Chain ecosystem, Heurist can interact with other chains without the need for complex bridging mechanisms, facilitating easier integration with various services and partners.
+
+* **Soverignity**: The operations on the Heurist chain are not affected by transactions outside of the Heurist ecosystem. This isolation ensures the cloud operations, resource management and payment system remain reliable, regardless of external transactions or market fluctuations.
+
+The sequencer of the layer 2 chain doubles as a router for serverless compute requests, efficiently directing requests to suitable nodes based on hardware requirements, software compatibility, and other factors like uptime and efficiency. Upon successful execution of a compute job, the transaction is posted onchain to finalize payment to relevant parties. If a request times out or fails, the sequencer/router has the flexibility to retry the operation or discard it, and no transaction is posted on-chain, preventing unnecessary gas fee spending.
+
+<img 
+    src="..\images\protocol-overview\user_flow.jpg" 
+    alt="user_flow"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+  
+**Application Layer**
+
+Anyone can build frontends to interface with the protocol. The concept of "frontend" in Heurist ecosystem extends beyond traditional web interfaces. It encompasses any entry point for external users to access the distributed compute cloud. A frontend may be a web application, a mobile app, an API gateway, or an integration into specialized industry interfaces.
+
+Frontends receive a share of the revenue generated from their traffic, incentivizing development and maintenance. By not having a single, official interface controlled by the protocol developers, Heurist avoids centralization of power and influence.
+
+Payment gateways are designed to cater the needs of both Web2 and Web3 users. Primarily there are two payment approaches:
+
+* **Pay-by-Developer**: Developers can prepay for a quota of compute resources in the form of Compute Credits, aligning with the typical SaaS/PaaS payment structures in Web2. In this model, application developers bear the cost of compute resources, and their profits are derived from the difference between user-generated revenue and service costs.
+
+* **Pay-by-User**: Users interact with applications through crypto wallets, paying compute fees directly through smart contracts per invocation to the service API. This approach is more capital-efficient as it allows developers to bootstrap applications without upfront investment in compute resources. Users are charged only for the specific compute resources they consume, without the need to get locked in a subscription. This model also enables novel use cases, such as blockchain AI agents that can autonomously pay for their compute needs.
+
+<img 
+    src="..\images\protocol-overview\payment_methods.jpg" 
+    alt="payment_methods"
+    style={{ width: '100%', display: 'block', margin: '0 auto' }}
+  />
+
+
+## Alignment-Centric Economics
+
+Heurist's economic structure is fundamentally built on the principle of alignment, ensuring that all participants work towards common objectives: expanding compute resources, optimizing resource utilization, supporting innovative use cases, and maintaining the protocol's long-term values of scalability, transparency, and open-source ethos.
+
+<Frame caption="Flow of values in the economy">
+  <img src="..\images\protocol-overview\value_flow.jpg" />
+</Frame>
+
+#### Economic Primitives
+
+1. **Protocol Emission**: Heurist distributes tokens to compute providers based on the requests they process. This emission combines base rewards (ensuring a minimum amount regardless of network usage) and dynamic rewards (determined by organic demand for GPU compute). This dual structure allows the network to scale up as demand increases while maintaining a projectable emission rate.
+
+<img 
+    src="..\images\protocol-overview\protocol_emission.jpg" 
+    alt="protocol_emission"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+
+1. **Voting to Compute Nodes**: Token holders can allocate voting power to specific compute providers, influencing the multiplier applied to their protocol emission rewards. Compute providers can share a portion of their mining emissions with voters as a tip, creating an additional incentive for token holders.
+
+<img 
+    src="..\images\protocol-overview\voting_compute_node.jpg" 
+    alt="voting_compute_node"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+1. **Revenue Share Between Compute Nodes and Pods**: When a user pays for compute resources hosting a pod, a portion of that payment is shared with the pod's deployer. This mechanism incentivizes the creation and hosting of high-demand pods (for example, popular open source AI models)
+
+<img 
+    src="..\images\protocol-overview\revenue_share_between_compute_node_and_pods.jpg" 
+    alt="revenue_share_between_compute_node_and_pods"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+
+1. **Voting to Pods**: Token holders can allocate voting power to pods, determining their scaling capacity within the network. A portion of the revenue generated by each pod is redistributed to its voters, creating a direct financial incentive for support.
+
+<img 
+    src="..\images\protocol-overview\voting_pods.jpg" 
+    alt="voting_pods"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+1. **Revenue Share Between Compute Nodes and Frontends**: When a user makes an on-chain payment through a frontend, the smart contract defines a revenue split between the compute provider and the frontend operator. Frontends can also refer compute requests to specific compute nodes.
+
+<img 
+    src="..\images\protocol-overview\revenue_share_between_compute_node_and_frontend.jpg" 
+    alt="revenue_share_between_compute_node_and_frontend"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+  />
+
+These primitives form our alignment-centric approach. We've created an ecosystem where contributing real value - whether through providing compute power, developing useful applications, or curating quality resources - is consistently rewarded. And the value is retained in the ecosystem.
+
+#### Real-World Interactions
+
+These economic primitives create a dynamic and interconnected network where participants can take on multiple roles to maximize their benefits. Here's how these primitives work together in real-world scenarios:
+
+* **Data center owners** can monetize their existing infrastructure by contributing GPUs as compute providers and hosting user-facing interfaces as frontend operators. This dual role allows them to earn from both protocol emissions and user payments. By prioritizing their own compute nodes for frontend requests, data centers ensure high utilization of their machines while maintaining the ability to scale beyond their physical capacity during peak demand using other available compute nodes in the network.
+
+* **Individual GPU owners** can participate in multiple ways to optimize their rewards. As compute providers, they earn protocol emissions. They can vote with staked Heurist Tokens for their own nodes or other high-performing compute nodes and promising workflows (pods). This voting mechanism diversifies the income streams of GPU owners.
+
+* **AI developers** can deploy and monetize their AI models or workflows, and earn a share of the revenue generated from their usage. Developers can opt in as frontend operators to create interfaces for their AI applications, giving them control over the user experience. This setup allows AI developers to benefit from the network's built-in monetization and scaling capabilities.
+
+The interconnected economic flows in the Heurist ecosystem create a self-reinforcing system that rewards efficient resource utilization and high-quality service. HEU token is tightly integrated into every interaction within the network, creating a virtuous cycle where ecosystem growth directly benefits all stakeholders.
+
+

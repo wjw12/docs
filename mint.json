@@ -1,91 +1,90 @@
 {
+  
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Heurist Ai",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "images/logo/dark.svg",
+    "light": "images/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "images/logo/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
-    "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
-    }
+    "primary": "#877DFF",
+    "light": "#877DFF",
+    "dark": "#877DFF"
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+      "name": "Support",
+      "url": "mailto:team@heurist.xyz"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+  
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "Twitter",
+      "icon": "twitter",
+      "url": "https://twitter.com/heurist_ai"
     },
     {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "icon": "Discord",
+      "url": "https://discord.com/invite/heuristai"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "introduction"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Protocol Overview",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "protocol-overview/litepaper",
+        "protocol-overview/tokenomics",
+        {
+          "group": "Mining",
+          "pages": [
+            "protocol-overview/mining",
+            "protocol-overview/mining/season-1-ended",
+            "protocol-overview/mining/season-2-ongoing"
+          ]
+        },
+        "protocol-overview/node-rental",
+        "protocol-overview/branding-assets",
+        "protocol-overview/contract-addresses"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Ecosystem",
       "pages": [
-        "api-reference/introduction"
+        "ecosystem/create-to-earn",
+        "ecosystem/zkimagine-nft",
+        "ecosystem/imaginaries-nft",
+        "ecosystem/loyalty-program"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Developer",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "developer/integration-overview",
+        "developer/supported-models",
+        "developer/image-generation-api",
+        "developer/heurist-llm-gateway"
+      ]
+    },
+    {
+      "group": "Guides",
+      "pages": [
+        "guides/miner-guide",
+        "guides/ai-101"
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "x": "https://x.com/heurist_ai",
+    "discord": "https://discord.com/invite/heuristai",
+    "linkedin": "https://www.linkedin.com/company/heurist-ai/"
   }
+  
 }
+
