@@ -17,6 +17,17 @@
       "url": "mailto:team@heurist.xyz"
   },
   
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    },
+    {
+      "name": "Use cases",
+      "url": "use-cases"
+    }
+  ],
+  
   "anchors": [
     {
       "name": "Twitter",
@@ -77,6 +88,19 @@
       "pages": [
         "guides/miner-guide",
         "guides/ai-101"
+      ]
+    },
+
+    {
+      "group": "API Documentation",
+      "pages": [
+        "api-reference/overview"
+      ]
+    },
+    {
+      "group": "Use cases",
+      "pages": [
+        "use-cases/overview"
       ]
     }
   ],
