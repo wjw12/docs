@@ -19,12 +19,8 @@
   
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
-    },
-    {
-      "name": "Use cases",
-      "url": "use-cases"
+      "name": "Developer Guide",
+      "url": "dev-guide"
     }
   ],
   
@@ -35,9 +31,19 @@
       "url": "https://twitter.com/heurist_ai"
     },
     {
-      "name": "Community",
+      "name": "Discord",
       "icon": "Discord",
       "url": "https://discord.com/invite/heuristai"
+    },
+    {
+      "name": "Github",
+      "icon": "Github",
+      "url": "https://github.com/heurist-network"
+    },
+    {
+      "name": "Medium",
+      "icon": "Medium",
+      "url": "https://medium.com/@heuristai"
     }
   ],
   "navigation": [
@@ -75,15 +81,6 @@
       ]
     },
     {
-      "group": "Developer",
-      "pages": [
-        "developer/integration-overview",
-        "developer/supported-models",
-        "developer/image-generation-api",
-        "developer/heurist-llm-gateway"
-      ]
-    },
-    {
       "group": "Guides",
       "pages": [
         "guides/miner-guide",
@@ -92,15 +89,12 @@
     },
 
     {
-      "group": "API Documentation",
+      "group": "Developer Reference",
       "pages": [
-        "api-reference/overview"
-      ]
-    },
-    {
-      "group": "Use cases",
-      "pages": [
-        "use-cases/overview"
+        "dev-guide/integration-overview",
+        "dev-guide/supported-models",
+        "dev-guide/image-generation-api",
+        "dev-guide/heurist-llm-gateway"
       ]
     }
   ],
