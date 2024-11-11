@@ -62,11 +62,10 @@
           "group": "Mining",
           "pages": [
             "protocol-overview/mining",
-            "protocol-overview/mining/season-1-ended",
-            "protocol-overview/mining/season-2-ongoing"
+            "protocol-overview/mining/season-1",
+            "protocol-overview/mining/season-2"
           ]
         },
-        "protocol-overview/node-rental",
         "protocol-overview/branding-assets",
         "protocol-overview/contract-addresses"
       ]
