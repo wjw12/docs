@@ -1,5 +1,4 @@
 {
-  
   "$schema": "https://mintlify.com/schema.json",
   "name": "Heurist AI",
   "logo": {
@@ -13,17 +12,15 @@
     "dark": "#877DFF"
   },
   "topbarCtaButton": {
-      "name": "Support",
-      "url": "mailto:team@heurist.xyz"
+    "name": "Support",
+    "url": "mailto:team@heurist.xyz"
   },
-  
   "tabs": [
     {
       "name": "Developer Guide",
       "url": "dev-guide"
     }
   ],
-  
   "anchors": [
     {
       "name": "Twitter",
@@ -85,14 +82,28 @@
         "guides/ai-101"
       ]
     },
-
     {
       "group": "Developer Reference",
       "pages": [
-        "dev-guide/integration-overview",
-        "dev-guide/supported-models",
-        "dev-guide/image-generation-api",
-        "dev-guide/heurist-llm-gateway"
+        "dev-guide/reference/integration-overview",
+        "dev-guide/reference/supported-models",
+        "dev-guide/reference/image-generation-api",
+        "dev-guide/reference/heurist-llm-gateway"
+      ]
+    },
+    {
+      "group": "Heurist SDK",
+      "pages": [
+        "dev-guide/heurist-sdk/introduction",
+        "dev-guide/heurist-sdk/getting-started",
+        {
+          "group": "Endpoint",
+          "pages": [
+            "dev-guide/heurist-sdk/endpoint/chat",
+            "dev-guide/heurist-sdk/endpoint/images",
+            "dev-guide/heurist-sdk/endpoint/workflow"
+          ]
+        }
       ]
     }
   ],
@@ -101,6 +112,4 @@
     "discord": "https://discord.com/invite/heuristai",
     "linkedin": "https://www.linkedin.com/company/heurist-ai/"
   }
-  
 }
-
