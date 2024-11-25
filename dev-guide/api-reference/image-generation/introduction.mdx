@@ -14,11 +14,37 @@ To use the API, you must include a valid authentication token in the request hea
 Authorization: Bearer YOUR_AUTH_KEY
 ```
 
-For API Code and reference, Please visit the [Submit Job](./endpoint) section.
+#### Parameters
+
+* `job_id` (String, required): A unique identifier for the job ensuring that every job you submit is tracked individually..
+
+* `model_input` (Object, required): Contains the parameters for the image generation.
+
+  * `SD` (Object): Specific settings for the Stable Diffusion model.
+
+    * `prompt` (String, required): The main description that guides the image generation.
+
+    * `neg_prompt` (String, optional): Descriptions of what to avoid in the generated image.
+
+    * `num_iterations` (Integer, optional): The number of iteration steps. We recommend 20\~30. Cannot exceed 50.
+
+    * `width` (Integer, optional): The width of the generated image in pixels. Default is 512.
+
+    * `height` (Integer, optional): The height of the generated image in pixels. Default is 512.
+
+    * `guidance_scale` (Float, optional): Influences the model's adherence to the prompt.
+
+    * `seed` (Integer, optional): Ensures reproducibility of the image generation. Default is -1 for pure randomness.
+
+* `model_id` (String, required): The identifier of the image generation model to use. You can find all supported models in the [Heurist model list](https://github.com/heurist-network/heurist-models/blob/main/models.json). Meaning of model type parameter:`sd15` = Stable Diffusion 1.5 checkpoint.`sdxl10` = SDXL 1.0 checkpoint. `composite15` = Stable Diffusion 1.5 LoRA. `compositexl` = SDXL LoRA
 
 ### Response Structure
 
 When the job is successfully processed, the API returns a URL pointing to the generated image.
+
+
+
+For API Code and reference, Please visit the [SD Image Generation API](./endpoint) section.
 
 ### Prompting Guide
 

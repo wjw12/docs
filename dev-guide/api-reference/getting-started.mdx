@@ -50,25 +50,4 @@ import Heurist from 'heurist'
 const heurist = new Heurist({
   apiKey: process.env['HEURIST_API_KEY'], 
 })
-
-
-async function generateImage() {
-  const response = await heurist.images.generate({
-    model: 'BrainDance',
-    prompt: '1girl',
-    // below are optional
-    neg_prompt: 'worst quality',
-    num_iterations: 25,
-    guidance_scale: 7.5,
-    width: 1024,
-    height: 768,
-    seed: -1
-  })
-
-  // response
-  // {
-  //   "url": "https://heurist-images.s3.us-east-1.amazonaws.com/**********.png"
-  //   ...
-  // }
-}
 ```

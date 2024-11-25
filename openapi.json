@@ -35,19 +35,109 @@
             "url": "http://sequencer.heurist.xyz"
           }
         ],
-        "summary": "Submit Image Generation Job",
         "description": "Submits a job to generate an image based on the provided text prompt using Stable Diffusion or Flux models.",
-        "operationId": "submitImageJob",
         "requestBody": {
           "description": "JSON payload to specify the image generation job details",
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubmitJobRequest"
+                "type": "object",
+                "properties": {
+                  "job_id": {
+                    "type": "string",
+                    "description": "A unique identifier for the job",
+                    "example": "heurist-sdk-job-C254845d2522"
+                  },
+                  "model_input": {
+                    "type": "object",
+                    "properties": {
+                      "SD": {
+                        "type": "object",
+                        "properties": {
+                          "prompt": {
+                            "type": "string",
+                            "description": "Textual description to generate the image",
+                            "example": "A beautiful landscape with mountains and a river"
+                          },
+                          "neg_prompt": {
+                            "type": "string",
+                            "description": "Textual description to avoid certain elements in the image",
+                            "example": "Avoid any signs of human presence"
+                          },
+                          "num_iterations": {
+                            "type": "integer",
+                            "description": "Number of iterations for the image generation process",
+                            "example": 20
+                          },
+                          "width": {
+                            "type": "integer",
+                            "description": "Width of the generated image in pixels",
+                            "example": 1024
+                          },
+                          "height": {
+                            "type": "integer",
+                            "description": "Height of the generated image in pixels",
+                            "example": 512
+                          },
+                          "guidance_scale": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "Guidance scale to control the adherence to the prompt",
+                            "example": 7.5
+                          },
+                          "seed": {
+                            "type": "integer",
+                            "description": "Seed for the random number generator to ensure reproducibility",
+                            "example": -1
+                          }
+                        },
+                        "required": ["prompt"]
+                      }
+                    },
+                    "required": ["SD"]
+                  },
+                  "model_id": {
+                    "type": "string",
+                    "description": "The identifier of the image generation model",
+                    "enum": [
+                      "HeuristLogo",
+                      "FLUX.1-dev",
+                      "PepeXL",
+                      "Zeek",
+                      "MagusDevon",
+                      "Aurora",
+                      "AnimagineXL",
+                      "CyberRealisticXL",
+                      "BrainDance",
+                      "BlazingDrive",
+                      "YamersCartoonArcadia",
+                      "ArchitectureRealMix",
+                      "ArthemyComics",
+                      "ArthemyReal",
+                      "DreamShaperXL",
+                      "AAMXLAnimeMix",
+                      "SDXLUnstableDiffusersV11",
+                      "SDXL"
+                    ]
+                  },
+                  "deadline": {
+                    "type": "integer",
+                    "description": "Maximum time in seconds to wait for the job to complete",
+                    "example": 60,
+                    "nullable": true
+                  },
+                  "priority": {
+                    "type": "integer",
+                    "description": "Priority level of the job",
+                    "example": 1,
+                    "nullable": true
+                  }
+                },
+                "required": ["job_id", "model_input", "model_id"]
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -89,7 +179,7 @@
         }
       }
     },
-    "/chat/completions": {
+    "/v1/chat/completions": {
       "post": {
         "servers": [
           {
@@ -224,21 +314,6 @@
           }
         }
       },
-      "SubmitJobRequest": {
-        "type": "object",
-        "required": ["prompt"],
-        "properties": {
-          "prompt": {
-            "type": "string",
-            "description": "Text prompt for image generation"
-          },
-          "model": {
-            "type": "string",
-            "description": "Model to use for generation",
-            "default": "stable-diffusion"
-          }
-        }
-      },
       "ChatCompletionResponse": {
         "type": "object",
         "properties": {
@@ -256,46 +331,36 @@
           },
           "model": {
             "type": "string",
-            "description": "The model used for completion"
+            "description": "Model ID used"
           },
           "choices": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "index": {
-                  "type": "integer"
-                },
                 "message": {
                   "type": "object",
                   "properties": {
                     "role": {
                       "type": "string",
-                      "enum": ["assistant"]
+                      "enum": ["assistant"],
+                      "description": "Message role"
                     },
                     "content": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "Message content"
                     }
                   }
                 },
                 "finish_reason": {
                   "type": "string",
-                  "enum": ["stop", "length", "content_filter"]
+                  "enum": ["stop", "length"],
+                  "description": "Reason for stopping the generation"
+                },
+                "index": {
+                  "type": "integer",
+                  "description": "Index of the message choice"
                 }
-              }
-            }
-          },
-          "usage": {
-            "type": "object",
-            "properties": {
-              "prompt_tokens": {
-                "type": "integer"
-              },
-              "completion_tokens": {
-                "type": "integer"
-              },
-              "total_tokens": {
-                "type": "integer"
               }
             }
           }
