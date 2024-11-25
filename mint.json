@@ -86,22 +86,26 @@
       "group": "Developer Reference",
       "pages": [
         "dev-guide/reference/integration-overview",
-        "dev-guide/reference/supported-models",
-        "dev-guide/reference/image-generation-api",
-        "dev-guide/reference/heurist-llm-gateway"
+        "dev-guide/reference/supported-models"
       ]
     },
     {
-      "group": "Heurist SDK",
+      "group": "API integration",
       "pages": [
-        "dev-guide/heurist-sdk/introduction",
-        "dev-guide/heurist-sdk/getting-started",
+        "dev-guide/api-reference/introduction",
+        "dev-guide/api-reference/getting-started",
         {
-          "group": "Endpoint",
+          "group": "Image Generation API",
           "pages": [
-            "dev-guide/heurist-sdk/endpoint/chat",
-            "dev-guide/heurist-sdk/endpoint/images",
-            "dev-guide/heurist-sdk/endpoint/workflow"
+            "dev-guide/api-reference/image-generation/introduction",
+            "dev-guide/api-reference/image-generation/endpoint"
+          ]
+        },
+        {
+          "group": "LLM Gateway API",
+          "pages": [
+            "dev-guide/api-reference/llm-gateway/introduction",
+            "dev-guide/api-reference/llm-gateway/endpoint"
           ]
         }
       ]
