@@ -187,7 +187,7 @@
           }
         ],
         "summary": "Create Chat Completion",
-        "description": "Creates a completion for the chat message. OpenAI-compatible endpoint for LLM interactions.",
+        "description": "OpenAI-compatible chat completion endpoint for LLM interactions.",
         "operationId": "createChatCompletion",
         "requestBody": {
           "description": "Chat completion request parameters",
@@ -237,14 +237,15 @@
                   "max_tokens": {
                     "type": "integer",
                     "description": "The maximum number of tokens to generate",
-                    "example": 64
+                    "example": 1024,
+                    "default": 1024
                   },
                   "temperature": {
                     "type": "number",
                     "format": "float",
-                    "description": "Sampling temperature between 0 and 2",
+                    "description": "Sampling temperature between 0 and 1",
                     "minimum": 0,
-                    "maximum": 2
+                    "maximum": 1
                   },
                   "stream": {
                     "type": "boolean",
