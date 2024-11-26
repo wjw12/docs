@@ -23,14 +23,9 @@
   ],
   "anchors": [
     {
-      "name": "Twitter",
-      "icon": "twitter",
+      "name": "x",
+      "icon": "x",
       "url": "https://twitter.com/heurist_ai"
-    },
-    {
-      "name": "Discord",
-      "icon": "Discord",
-      "url": "https://discord.com/invite/heuristai"
     },
     {
       "name": "Github",
@@ -38,7 +33,12 @@
       "url": "https://github.com/heurist-network"
     },
     {
-      "name": "telegram",
+      "name": "Discord",
+      "icon": "Discord",
+      "url": "https://discord.com/invite/heuristai"
+    },
+    {
+      "name": "Telegram",
       "icon": "telegram",
       "url": "https://t.me/heuristsupport"
     },
@@ -124,8 +124,10 @@
   ],
   "footerSocials": {
     "x": "https://x.com/heurist_ai",
+    "github": "https://github.com/heurist-network",
     "discord": "https://discord.com/invite/heuristai",
     "linkedin": "https://www.linkedin.com/company/heurist-ai/",
-    "telegram": "https://t.me/heuristsupport"
+    "telegram": "https://t.me/heuristsupport",
+    "medium": "https://medium.com/@heuristai"
   }
 }
