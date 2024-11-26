@@ -103,7 +103,8 @@
         "dev-guide/api-reference/heurist-sdk/introduction",
         "dev-guide/api-reference/heurist-sdk/getting-started",
         "dev-guide/api-reference/heurist-sdk/basic-image-generation",
-        "dev-guide/api-reference/heurist-sdk/smartgen"
+        "dev-guide/api-reference/heurist-sdk/smartgen",
+        "dev-guide/api-reference/heurist-sdk/heurist-workflow"
 
       ]
     },
