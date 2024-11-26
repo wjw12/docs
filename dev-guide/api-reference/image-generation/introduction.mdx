@@ -14,6 +14,32 @@ To use the API, you must include a valid authentication token in the request hea
 Authorization: Bearer YOUR_AUTH_KEY
 ```
 
+### Request Format
+
+Submit a JSON payload with the following structure:
+
+```
+{
+  "job_id": "Random Job Identifier (Must Be Unique)",
+  "model_input": {
+    "SD": {
+      "prompt": "Textual description to generate the image",
+      "neg_prompt": "Negative prompt to avoid certain elements in the image",
+      "num_iterations": "Number of iterations for the image generation process",
+      "width": "Width of the generated image in pixels",
+      "height": "Height of the generated image in pixels",
+      "guidance_scale": "Guidance scale to control the adherence to the prompt",
+      "seed": "Seed for the random number generator to ensure reproducibility"
+    }
+  },
+  "model_id": "Identifier for the image generation model",
+  "deadline": "Maximum time in seconds to wait for the job to complete (Not supported yet)",
+  "priority": "Priority level of the job (Not supported yet)"
+}
+```
+
+
+
 #### Parameters
 
 * `job_id` (String, required): A unique identifier for the job ensuring that every job you submit is tracked individually..

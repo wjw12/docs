@@ -63,7 +63,7 @@
             "protocol-overview/mining/season-2"
           ]
         },
-        "protocol-overview/branding-assets",
+        "protocol-overview/brand-assets",
         "protocol-overview/contract-addresses"
       ]
     },
@@ -86,7 +86,8 @@
       "group": "Developer Reference",
       "pages": [
         "dev-guide/reference/integration-overview",
-        "dev-guide/reference/supported-models"
+        "dev-guide/reference/supported-models",
+        "dev-guide/reference/image-prompting"
       ]
     },
     {
@@ -99,22 +100,19 @@
     {
       "group": "Heurist SDK",
       "pages": [
-        "dev-guide/api-reference/introduction",
-        "dev-guide/api-reference/getting-started",
-        {
-          "group": "Image Generation",
-          "pages": [
-            "dev-guide/api-reference/image-generation/introduction",
-            "dev-guide/api-reference/image-generation/endpoint"
-          ]
-        }
+        "dev-guide/api-reference/heurist-sdk/introduction",
+        "dev-guide/api-reference/heurist-sdk/getting-started",
+        "dev-guide/api-reference/heurist-sdk/basic-image-generation",
+        "dev-guide/api-reference/heurist-sdk/smartgen"
+
       ]
     },
     {
       "group": "LLM Gateway",
       "pages": [
         "dev-guide/api-reference/llm-gateway/introduction",
-        "dev-guide/api-reference/llm-gateway/endpoint"
+        "dev-guide/api-reference/llm-gateway/endpoint",
+        "dev-guide/api-reference/llm-gateway/integration"
       ]
     }
   ],
