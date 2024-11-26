@@ -23,8 +23,8 @@
   ],
   "anchors": [
     {
-      "name": "x",
-      "icon": "x",
+      "name": "X",
+      "icon": "x-twitter",
       "url": "https://twitter.com/heurist_ai"
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "name": "Telegram",
-      "icon": "telegram",
+      "icon": "Telegram",
       "url": "https://t.me/heuristsupport"
     },
     {
@@ -110,7 +110,6 @@
         "dev-guide/api-reference/heurist-sdk/basic-image-generation",
         "dev-guide/api-reference/heurist-sdk/smartgen",
         "dev-guide/api-reference/heurist-sdk/heurist-workflow"
-
       ]
     },
     {
@@ -126,7 +125,6 @@
     "x": "https://x.com/heurist_ai",
     "github": "https://github.com/heurist-network",
     "discord": "https://discord.com/invite/heuristai",
-    "linkedin": "https://www.linkedin.com/company/heurist-ai/",
     "telegram": "https://t.me/heuristsupport",
     "medium": "https://medium.com/@heuristai"
   }
