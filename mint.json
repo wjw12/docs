@@ -38,6 +38,11 @@
       "url": "https://github.com/heurist-network"
     },
     {
+      "name": "telegram",
+      "icon": "telegram",
+      "url": "https://t.me/heuristsupport"
+    },
+    {
       "name": "Medium",
       "icon": "Medium",
       "url": "https://medium.com/@heuristai"
@@ -120,6 +125,7 @@
   "footerSocials": {
     "x": "https://x.com/heurist_ai",
     "discord": "https://discord.com/invite/heuristai",
-    "linkedin": "https://www.linkedin.com/company/heurist-ai/"
+    "linkedin": "https://www.linkedin.com/company/heurist-ai/",
+    "telegram": "https://t.me/heuristsupport"
   }
 }
