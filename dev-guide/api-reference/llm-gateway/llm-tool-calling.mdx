@@ -4,13 +4,12 @@ title: "LLM Tool Calling"
 
 ## Overview
 
-The `tool-calling.py` script demonstrates how to use large language models (LLMs) for interacting with external tools. This "tool calling" capability allows AI models to extend their functionality by invoking APIs or services based on the user's prompt.
+Tool calling (or function calling) is the ability to connect LLMs to external tools to enable effective tool usage and interaction with external APIs. Tools are essentially functions made available to LLMs. For example, a weather tool could be a function that fetches the current weather of a location. LLMs can use tools to access real-time data, interact with software, or perform agentic actions. Heurist LLM Gateway supports tool calling in consistency with OpenAI SDK.
 
-Instead of a specific model ID, you can use Finetuned model which supports function_calling from Heurist AI. You can find the complete list of available models in the official documentation: [Supported Models](https://docs.heurist.ai/supported_models).
-
+Contrary to the term, in tool calling, the LLMs do not call the tool/function in the literal sense. A tool schema contains the names, parameters, and descriptions of tools. When you ask LLM a question that requires tool assistance, the model looks for the tools it has, and if a relevant one is found based on the tool name and description, it halts the text generation and outputs a structured response containing the tool's name and parameter values deemed fit by the LLM model. Then, you can use this information to execute the original function and pass the output back to the LLM for a complete answer.
 
 ## Example Usage
-The code integrates an AI model with custom tools to fetch cryptocurrency prices and weather information. It enables the model to dynamically call predefined functions for these tasks and return detailed responses based on user queries.
+[tool-calling.py](https://github.com/heurist-network/dev-examples/blob/main/tool-calling.py) integrates an AI model with custom tools to fetch cryptocurrency prices and weather information. It enables the model to dynamically call predefined functions for these tasks and return detailed responses based on user queries.
 
 ``` python
 from openai import OpenAI
