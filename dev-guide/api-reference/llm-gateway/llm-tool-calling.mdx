@@ -6,20 +6,9 @@ title: "LLM Tool Calling"
 
 The `tool-calling.py` script demonstrates how to use large language models (LLMs) for interacting with external tools. This "tool calling" capability allows AI models to extend their functionality by invoking APIs or services based on the user's prompt.
 
-Instead of a specific model ID, you can use any of the supported models from Heurist AI. You can find the complete list of available models in the official documentation: [Supported Models](https://docs.heurist.ai/supported_models).
-
-## Authentication with API Key
-
-To use the Heurist API, you need an API key, which authenticates your requests. The API key is required to interact with the service and access the models. To get your API key, follow the instructions in the Heurist API documentation.
+Instead of a specific model ID, you can use Finetuned model which supports function_calling from Heurist AI. You can find the complete list of available models in the official documentation: [Supported Models](https://docs.heurist.ai/supported_models).
 
 
-```python
-# Configure the OpenAI client
-client = OpenAI(
-    api_key="your_user_id#your_api_key",  # Replace with your actual API key
-    base_url="https://llm-gateway.heurist.xyz"
-)
-```
 ## Example Usage
 The code integrates an AI model with custom tools to fetch cryptocurrency prices and weather information. It enables the model to dynamically call predefined functions for these tasks and return detailed responses based on user queries.
 
@@ -28,14 +17,13 @@ from openai import OpenAI
 import json
 from typing import Dict, Any
 
-# You must use a model that supports tool calling (function calling)
-LLM_GATEWAY_URL = "https://llm-gateway.heurist.xyz"
-model_id = ""
+# You should use a model that is fine tuned to do function_calling
+model_id = "hermes-3-llama3.1-8b"
 
 # Configure the OpenAI client
 client = OpenAI(
     api_key="your_user_id#your_api_key",
-    base_url=LLM_GATEWAY_URL
+    base_url="https://llm-gateway.heurist.xyz"
 )
 
 def get_coin_price(token: str) -> float:
