@@ -1,0 +1,378 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Heurist API",
+    "description": "Heurist Image and Text Generation APIs",
+    "version": "1.0.0",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "{server}",
+      "variables": {
+        "server": {
+          "enum": [
+            "http://sequencer.heurist.xyz",
+            "https://llm-gateway.heurist.xyz"
+          ],
+          "default": "http://sequencer.heurist.xyz"
+        }
+      }
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/submit_job": {
+      "post": {
+        "servers": [
+          {
+            "url": "http://sequencer.heurist.xyz"
+          }
+        ],
+        "description": "Submits a job to generate an image based on the provided text prompt using Stable Diffusion or Flux models.",
+        "requestBody": {
+          "description": "JSON payload to specify the image generation job details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "job_id": {
+                    "type": "string",
+                    "description": "A unique identifier for the job",
+                    "example": "heurist-sdk-job-C254845d2522"
+                  },
+                  "model_input": {
+                    "type": "object",
+                    "properties": {
+                      "SD": {
+                        "type": "object",
+                        "properties": {
+                          "prompt": {
+                            "type": "string",
+                            "description": "Textual description to generate the image",
+                            "example": "A beautiful landscape with mountains and a river"
+                          },
+                          "neg_prompt": {
+                            "type": "string",
+                            "description": "Textual description to avoid certain elements in the image",
+                            "example": "Avoid any signs of human presence"
+                          },
+                          "num_iterations": {
+                            "type": "integer",
+                            "description": "Number of iterations for the image generation process",
+                            "example": 20
+                          },
+                          "width": {
+                            "type": "integer",
+                            "description": "Width of the generated image in pixels",
+                            "example": 1024
+                          },
+                          "height": {
+                            "type": "integer",
+                            "description": "Height of the generated image in pixels",
+                            "example": 512
+                          },
+                          "guidance_scale": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "Guidance scale to control the adherence to the prompt",
+                            "example": 7.5
+                          },
+                          "seed": {
+                            "type": "integer",
+                            "description": "Seed for the random number generator to ensure reproducibility",
+                            "example": -1
+                          }
+                        },
+                        "required": ["prompt"]
+                      }
+                    },
+                    "required": ["SD"]
+                  },
+                  "model_id": {
+                    "type": "string",
+                    "description": "The identifier of the image generation model",
+                    "enum": [
+                      "HeuristLogo",
+                      "FLUX.1-dev",
+                      "PepeXL",
+                      "Zeek",
+                      "MagusDevon",
+                      "Aurora",
+                      "AnimagineXL",
+                      "CyberRealisticXL",
+                      "BrainDance",
+                      "BlazingDrive",
+                      "YamersCartoonArcadia",
+                      "ArchitectureRealMix",
+                      "ArthemyComics",
+                      "ArthemyReal",
+                      "DreamShaperXL",
+                      "AAMXLAnimeMix",
+                      "SDXLUnstableDiffusersV11",
+                      "SDXL"
+                    ]
+                  },
+                  "deadline": {
+                    "type": "integer",
+                    "description": "Maximum time in seconds to wait for the job to complete",
+                    "example": 60,
+                    "nullable": true
+                  },
+                  "priority": {
+                    "type": "integer",
+                    "description": "Priority level of the job",
+                    "example": 1,
+                    "nullable": true
+                  }
+                },
+                "required": ["job_id", "model_input", "model_id"]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Job successfully submitted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image_url": {
+                      "type": "string",
+                      "description": "URL pointing to the generated image"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, invalid parameters or missing fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access, invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/chat/completions": {
+      "post": {
+        "servers": [
+          {
+            "url": "https://llm-gateway.heurist.xyz"
+          }
+        ],
+        "summary": "Create Chat Completion",
+        "description": "OpenAI-compatible chat completion endpoint for LLM interactions.",
+        "operationId": "createChatCompletion",
+        "requestBody": {
+          "description": "Chat completion request parameters",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["model", "messages"],
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "ID of the model to use",
+                    "enum": [
+                      "dolphin-2.9-llama3-8b",
+                      "hermes-3-llama3.1-8b",
+                      "meta-llama/llama-3-70b-instruct",
+                      "meta-llama/llama-3.1-405b-instruct",
+                      "mistralai/mistral-7b-instruct",
+                      "mistralai/mixtral-8x22b-instruct",
+                      "mistralai/mixtral-8x7b-instruct",
+                      "nvidia/llama-3.1-nemotron-70b-instruct",
+                      "openhermes-mixtral-8x7b-gptq",
+                      "qwen/qwen-2.5-coder-32b-instruct",
+                      "theia-llama-3.1-8b"
+                    ]
+                  },
+                  "messages": {
+                    "type": "array",
+                    "description": "A list of messages comprising the conversation so far",
+                    "items": {
+                      "type": "object",
+                      "required": ["role", "content"],
+                      "properties": {
+                        "role": {
+                          "type": "string",
+                          "enum": ["system", "user", "assistant"],
+                          "description": "The role of the message author"
+                        },
+                        "content": {
+                          "type": "string",
+                          "description": "The content of the message"
+                        }
+                      }
+                    }
+                  },
+                  "max_tokens": {
+                    "type": "integer",
+                    "description": "The maximum number of tokens to generate",
+                    "example": 1024,
+                    "default": 1024
+                  },
+                  "temperature": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Sampling temperature between 0 and 1",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "stream": {
+                    "type": "boolean",
+                    "description": "Whether to stream back partial progress",
+                    "default": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful completion response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatCompletionResponse"
+                }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "type": "string",
+                  "description": "Server-sent events stream for partial completions when stream=true"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access, invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": ["error", "message"],
+        "properties": {
+          "error": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Error code"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          }
+        }
+      },
+      "ChatCompletionResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the completion"
+          },
+          "object": {
+            "type": "string",
+            "enum": ["chat.completion"]
+          },
+          "created": {
+            "type": "integer",
+            "description": "Unix timestamp of when the completion was created"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model ID used"
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "object",
+                  "properties": {
+                    "role": {
+                      "type": "string",
+                      "enum": ["assistant"],
+                      "description": "Message role"
+                    },
+                    "content": {
+                      "type": "string",
+                      "description": "Message content"
+                    }
+                  }
+                },
+                "finish_reason": {
+                  "type": "string",
+                  "enum": ["stop", "length"],
+                  "description": "Reason for stopping the generation"
+                },
+                "index": {
+                  "type": "integer",
+                  "description": "Index of the message choice"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ title: "Image Generation API"
 
 ### Overview
 
-Heurist provides REST API that allows developers to invoke Stable Diffusion / Flux model inference to programmatically generate images based on text prompts. This document outlines how to use the API to submit image generation jobs and retrieve the generated images.
+Heurist provides a REST API that allows developers to invoke Stable Diffusion / Flux model inference to programmatically generate images based on text prompts. This document outlines how to use the API to submit image generation jobs and retrieve the generated images.
 
 ### Authentication
 
@@ -13,12 +13,6 @@ To use the API, you must include a valid authentication token in the request hea
 ```
 Authorization: Bearer YOUR_AUTH_KEY
 ```
-
-### API Endpoint
-
-* **URL**: `http://sequencer.heurist.xyz/submit_job`
-
-* **Method**: `POST`
 
 ### Request Format
 
@@ -43,6 +37,8 @@ Submit a JSON payload with the following structure:
   "priority": "Priority level of the job (Not supported yet)"
 }
 ```
+
+
 
 #### Parameters
 
@@ -71,6 +67,10 @@ Submit a JSON payload with the following structure:
 ### Response Structure
 
 When the job is successfully processed, the API returns a URL pointing to the generated image.
+
+
+
+For API Code and reference, Please visit the [SD Image Generation API](./endpoint) section.
 
 ### Prompting Guide
 
