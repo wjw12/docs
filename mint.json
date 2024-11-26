@@ -117,7 +117,8 @@
       "pages": [
         "dev-guide/api-reference/llm-gateway/introduction",
         "dev-guide/api-reference/llm-gateway/endpoint",
-        "dev-guide/api-reference/llm-gateway/integration"
+        "dev-guide/api-reference/llm-gateway/integration",
+        "dev-guide/api-reference/llm-gateway/llm-tool-calling"
       ]
     }
   ],
