@@ -35,7 +35,7 @@
             "url": "http://sequencer.heurist.xyz"
           }
         ],
-        "description": "Submits a job to generate an image based on the provided text prompt using Stable Diffusion or Flux models.",
+        "description": "Generate an image based on the provided text prompt.",
         "requestBody": {
           "description": "JSON payload to specify the image generation job details",
           "content": {
@@ -119,18 +119,6 @@
                       "SDXLUnstableDiffusersV11",
                       "SDXL"
                     ]
-                  },
-                  "deadline": {
-                    "type": "integer",
-                    "description": "Maximum time in seconds to wait for the job to complete",
-                    "example": 60,
-                    "nullable": true
-                  },
-                  "priority": {
-                    "type": "integer",
-                    "description": "Priority level of the job",
-                    "example": 1,
-                    "nullable": true
                   }
                 },
                 "required": ["job_id", "model_input", "model_id"]

@@ -1,16 +1,17 @@
 ---
-title: "Heurist Workflow"
-Description: "The Workflow class provides methods for executing and managing workflow tasks, such as image upscaling."
+title: "ComfyUI Workflow"
+description: "Execute ComfyUI workflows such as image upscaling and video generation."
 ---
 
+> **In Development**: This feature is in development. Not ready for use.
 
-# Response
+# Example Request
 
 ```python 
 import Heurist from 'heurist'
  
 const heurist = new Heurist({
-  apiKey: process.env['HEURIST_API_KEY'], // This is the default and can be omitted
+  apiKey: process.env['HEURIST_API_KEY'],
 })
  
 async function main() {
@@ -24,7 +25,7 @@ async function main() {
  
 main()
 ```
-
+# Example Response
 
 ```json
 {

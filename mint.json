@@ -40,7 +40,7 @@
     {
       "name": "Telegram",
       "icon": "Telegram",
-      "url": "https://t.me/heuristsupport"
+      "url": "https://t.me/heurist_ai"
     },
     {
       "name": "Medium",
@@ -110,7 +110,7 @@
         "dev-guide/api-reference/heurist-sdk/getting-started",
         "dev-guide/api-reference/heurist-sdk/basic-image-generation",
         "dev-guide/api-reference/heurist-sdk/smartgen",
-        "dev-guide/api-reference/heurist-sdk/heurist-workflow"
+        "dev-guide/api-reference/heurist-sdk/comfyui-workflow"
       ]
     },
     {
@@ -118,7 +118,6 @@
       "pages": [
         "dev-guide/api-reference/llm-gateway/introduction",
         "dev-guide/api-reference/llm-gateway/endpoint",
-        "dev-guide/api-reference/llm-gateway/integration",
         "dev-guide/api-reference/llm-gateway/llm-tool-calling"
       ]
     }
@@ -127,7 +126,7 @@
     "x": "https://x.com/heurist_ai",
     "github": "https://github.com/heurist-network",
     "discord": "https://discord.com/invite/heuristai",
-    "telegram": "https://t.me/heuristsupport",
+    "telegram": "https://t.me/heurist_ai",
     "medium": "https://medium.com/@heuristai"
   }
 }

@@ -2,22 +2,72 @@
 title: "Introduction"
 ---
 
-### Heurist LLM Gateway
+## Heurist LLM Gateway
 
-Transform your AI capabilities with **Heurist LLM Gateway**, a powerful, OpenAI-compatible API endpoint designed to seamlessly integrate with a wide range of open-source Large Language Models (LLMs). Heurist Gateway enables you to unlock the power of decentralized AI, providing an efficient, low-cost alternative to traditional cloud-based LLM services. Whether you're building applications in natural language processing, AI chatbots, content generation, or any other domain requiring cutting-edge AI, Heurist makes it easy to integrate LLMs into your projects.
+Access open source LLMs in Heurist instantly and transform your AI capabilities using the familiar OpenAI SDK. Simply replace the base URL setting in OpenAI libraries with `https://llm-gateway.heurist.xyz`.
 
-With the Heurist Gateway, you can interact with top-performing models like **Mistralai Mixtral** directly using the OpenAI SDK, streamlining the integration process. This gives you access to state-of-the-art models without the high costs typically associated with cloud providers, empowering developers to create more scalable and cost-effective AI solutions.
-
-### Key Features:
-- **OpenAI Compatibility**: Heurist Gateway is designed to be fully compatible with the OpenAI SDK, allowing you to use the same familiar interface to interact with decentralized LLMs.
+### Key Features
+- **OpenAI Compatibility**: Heurist LLM Gateway is designed to be fully compatible with the OpenAI SDK, allowing you to use the same familiar interface to interact with decentralized LLMs.
 - **Decentralized AI at Low Cost**: Leverage the benefits of decentralized computing to access powerful LLMs while significantly reducing operational costs.
-- **Simple Integration**: You can start using Heurist Gateway with just 3 lines of code—no complicated setup required.
+- **Simple Integration**: You can start using Heurist Gateway with just 3 lines of code. No complicated setup required.
 - **Streaming Responses**: Get real-time results from LLMs with built-in support for streaming responses, enabling interactive experiences like chatbots and live content generation.
-- **Open-Source Ecosystem**: Heurist supports a wide range of open-source LLMs, allowing you to choose the best model for your use case, from language understanding to code generation.
+- **Open-Source Ecosystem**: Heurist supports a wide range of open source LLMs, allowing you to choose the best model for your use case, from conversational agents to code generation.
 
-### Getting Started:
+### Getting Started
 
-To get started with the Heurist LLM Gateway, you’ll first need an API key from Heurist. Once you have your API token, integrating it into your application is as simple as configuring the SDK and making a few calls.
+To get started with the Heurist LLM Gateway, you’ll first need an API key from Heurist. Once you have your API token, integrating it into your application is as simple as a few lines of code.
 
+Here's how you can use the **Heurist LLM Gateway** in different languages.
 
-For API Code and reference, Please visit the [Chat Completion Endpoint](./endpoint) section. This dynamic interface allows users to seamlessly interact with the system, experiment with its capabilities, and gain a hands-on understanding of its functionality.
+<CodeGroup>
+  ```javascript Node
+  import OpenAI from "openai";
+
+  const openai = new OpenAI({
+    apiKey: process.env["HEURIST_API_TOKEN"],
+    baseURL: "https://llm-gateway.heurist.xyz",
+  });
+
+  const completions = await openai.chat.completions.create({
+    model: "mistralai/mixtral-8x7b-instruct",
+    messages: [
+      {
+        role: "user",
+        content: "Write rap lyrics about Ethereum",
+      },
+    ],
+    maxTokens: 64,
+    stream: true,
+  });
+
+  for await (const part of completions) {
+    process.stdout.write(part.choices[0]?.delta?.content || "");
+  }
+  ```
+
+  ```python Python
+  from openai import OpenAI
+
+  client = OpenAI(
+      api_key="YOUR_HEURIST_API_TOKEN",
+      base_url="https://llm-gateway.heurist.xyz"
+  )
+
+  completion = client.chat.completions.create(
+      model="mistralai/mixtral-8x7b-instruct",
+      messages=[
+          {
+              "role": "user",
+              "content": "Write rap lyrics about Ethereum"
+          }
+      ],
+      max_tokens=64,
+      stream=True
+  )
+
+  for chunk in completion:
+      print(chunk.choices[0].delta.content or "", end="", flush=True)
+  ```
+</CodeGroup>
+
+Heurist LLM Gateway integrates seamlessly with the official OpenAI libraries. You can easily replace the `baseURL` in your client configuration to use Heurist’s decentralized models, gaining low-cost and uncensored AI capabilities. Refer to your language-specific [OpenAI SDK docs](https://platform.openai.com/docs/libraries) for endpoint configuration.

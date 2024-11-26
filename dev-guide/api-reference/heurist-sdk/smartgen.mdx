@@ -3,7 +3,6 @@ title: "SmartGen"
 description: "SmartGen for Image Generation (Experimental)"
 ---
 
-
 > **Experimental Feature**: SmartGen is currently in beta. APIs and behaviors may change.
 
 ---
@@ -76,7 +75,7 @@ const params = await heurist.smartgen.generateImage({
   image_model: "FLUX-1-dev",
   stylization_level: 4,
   must_include: "neon lights, flying cars",
-  param_only: true  // Don't generate image yet
+  param_only: true  // Don't generate image yet. Only return the parameters
 });
 
 // Review and modify parameters if needed
@@ -89,12 +88,12 @@ const imageResult = await heurist.images.generate({
 });
 ```
 
-### Response Type in Parameter-only Mode ( param_only set to true)
+### Response Type in Parameter-only Mode (`param_only` set to true)
 
 ``` javascript
 {
-  parameters: {  // Enhanced prompt
-    prompt: string,
+  parameters: {
+    prompt: string, // LLM-enhanced prompt
     model: string,
     width: number,
     height: number,
@@ -104,6 +103,8 @@ const imageResult = await heurist.images.generate({
   }
 }
 ```
+
+This allows you to preview and tweak the image generation parameters before invoking the generation method.
 
 ## One-Step Generation
 
