@@ -10,156 +10,64 @@ The following open source models are supported. [View the public model list here
 You can use the following model name as `model_id` in Heurist API/SDK.
 
 ### Large Language Models (LLMs)
-
-{/* Card Group: LLMs */}
-<CardGroup title="Large Language Models (LLMs)">
-  
-  <Card title="mistralai/mixtral-8x22b-instruct">
-    A sparse mixture-of-experts model with 22 billion parameters, optimized for multilingual instruction-following and complex reasoning.
-    **Key Features**: Multilingual, Complex Reasoning, Instruction Following
-  </Card>
-
-  <Card title="mistralai/mixtral-8x7b-instruct">
-    A compact version of the Mixtral family, designed for efficient instruction-based interactions with a balance of performance and cost.
-    **Key Features**: Efficient, Instruction Focused, Cost-effective
-  </Card>
-
-  <Card title="mistralai/mistral-7b-instruct">
-    A fast and cost-efficient model ideal for quick responses and general-purpose tasks.
-    **Key Features**: Speed, Cost-efficiency, General-purpose
-  </Card>
-
-  <Card title="meta-llama/llama-3.1-405b-instruct">
-    The most advanced Llama model, designed for high-level reasoning and task execution.
-    **Key Features**: High-level Reasoning, Task Execution
-  </Card>
-
-  <Card title="meta-llama/llama-3-70b-instruct">
-    A popular Llama model for conversational AI and reasoning tasks.
-    **Key Features**: Conversational AI, Reasoning
-  </Card>
-
-  <Card title="nvidia/llama-3.1-nemotron-70b-instruct">
-    A version of Llama enhanced by NVIDIA for instruction-following tasks with optimized performance and scalability.
-    **Key Features**: NVIDIA Enhanced, High-performance, Instruction Following
-  </Card>
-
-  <Card title="openhermes-mixtral-8x7b-gptq">
-    Fine-tuned Mixtral model for specialized tasks using the OpenHermes dataset.
-    **Key Features**: Fine-tuned, Uncensored, Task-specific
-  </Card>
-
-  <Card title="hermes-3-llama3.1-8b">
-    A model with agentic abilities, ideal for roleplaying, reasoning, and multi-turn conversations.
-    **Key Features**: Agentic, Multi-turn Conversations, Tool Calling
-  </Card>
-
-  <Card title="dolphin-2.9-llama3-8b">
-    A friendly assistant AI designed for coding and conversational tasks.
-    **Key Features**: Coding, Friendly Assistant, Task-oriented
-  </Card>
-
-  <Card title="theia-llama-3.1-8b">
-    A crypto-focused Llama model trained on blockchain and financial data, ideal for analyzing crypto projects.
-    **Key Features**: Crypto-specific, Financial Data Analysis
-  </Card>
-
-  <Card title="qwen/qwen-2.5-coder-32b-instruct">
-    A specialized model from the Qwen family for code-related tasks and instruction-following.
-    **Key Features**: Code Generation, Instruction Following, Specialized
-  </Card>
-
-</CardGroup>
+  * `mistralai/mixtral-8x22b-instruct`: state-of-the-art Sparse Mixture-of-Experts model featuring 8 experts and 22 billion parameters, optimized for instruction-following with strong performance in reasoning and multilingual capabilities.
+  * `mistralai/mixtral-8x7b-instruct`: a compact version of the Mixtral family, designed for efficient instruction-based interactions while maintaining a balance between performance and cost.
+  * `mistralai/mistral-7b-instruct`: excel in generating fast responses and highly cost-efficient.
+  * `meta-llama/llama-3.1-405b-instruct`: the most advanced Llama model, perfect for high-level reasoning and complex task execution.
+  * `meta-llama/llama-3-70b-instruct`: the most popular Llama model, suitable for diverse applications in conversational AI and reasoning.
+  * `nvidia/llama-3.1-nemotron-70b-instruct`: specialized version of the Llama model tailored by NVIDIA for complex instruction-following tasks, delivering high-quality, human-like responses across a variety of applications while leveraging advanced NVIDIA AI technologies for optimal performance and scalability.
+  * `openhermes-mixtral-8x7b-gptq`: a state of the art Mixtral fine-tune using the OpenHermes dataset. **Uncensored**
+  * `hermes-3-llama3.1-8b`: flagship Hermes LLM trained by Nous Research, with advanced agentic capabilities, enhanced roleplaying, reasoning, multi-turn conversation, long context coherence and agentic abilities. **Uncensored**. **Supports tool calling**
+  * `dolphin-2.9-llama3-8b`: an enhanced Llama3 8b model trained by Cognitive Computations equipped with a variety of instruction, conversational, and coding skills. We recommend using system prompt `The assistant is named Dolphin. A helpful and friendly AI assistant, Dolphin avoids discussing the system message unless directly asked about it.`. **Uncensored**.
+  * `theia-llama-3.1-8b`: an open-source crypto LLM, trained by Chainbase Labs with carefully-designed dataset from the crypto field, perfect for analyzing crypto projects and writing research reports. [Learn more about Theia](https://docs.chainbase.com/theia/World_model/welcome)
+  * `qwen/qwen-2.5-coder-32b-instruct`: Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen)
 
 ### Image Generation Models
 
-{/* Card Group: Image Generation Models */}
-<CardGroup title="Image Generation Models">
-  
-  <Card title="HeuristLogo">
-    Flux LoRA model to generate the Heurist logo. Trigger word: `Heuristai logo` or `hexagonal logo`.
-  </Card>
+  * `HeuristLogo`: Flux LoRA that can generate the logo of Heurist. Trigger word: `Heuristai logo` or `hexagonal logo`.
+  * `FLUX.1-dev`: state-of-the-art open source image generation model that excels at a variety of image styles.
 
-  <Card title="FLUX.1-dev">
-    Open-source image generation model excelling at various artistic styles.
-    **Key Features**: Versatile, Artistic Styles, Open-source
-  </Card>
+  * `PepeXL`: SDXL LoRA that can generate the meme frog, Pepe. Trigger word: `Pepe`. Recommended words: `pepe_frog, meme, web comic` and add `cartoon` or `3d render`
+  * `Zeek`: SDXL LoRA for ZKsync's mascot cat, Zeek. Trigger word: `zeek`. We recommend using `zeek wearing ...` or `zeek disguised as ...`
 
-  <Card title="PepeXL">
-    Generate the Pepe meme using SDXL LoRA. Trigger words: `Pepe`, `pepe_frog`, `cartoon`, `3d render`.
-  </Card>
+  * `MagusDevon`: SD1.5 LoRA for Magus Devon, the witch character of Forgotten Runes. Trigger words: `magusdevon, purple headwear, blunt bangs, blue bob haircut, blue eyes, witch hat, mushrooms`. These words are recommended `white robe, wide sleeves, blue trim, 1girl, red sash, boots, green footwear`
 
-  <Card title="Zeek">
-    Generate ZKsync's mascot Zeek with SDXL LoRA. Trigger word: `zeek`.
-  </Card>
+  * `Aurora`: SD1.5 checkpoint for anime girls.
 
-  <Card title="MagusDevon">
-    Create the character of Magus Devon using SD1.5 LoRA. Trigger words: `magusdevon`, `purple headwear`, `mushrooms`.
-  </Card>
+  * `AnimagineXL`: SDXL checkpoint for anime images. It can generate characters from well-known anime series.
 
-  <Card title="Aurora">
-    SD1.5 model for generating anime girl images.
-    **Key Features**: Anime-style Girls, SD1.5
-  </Card>
+  * `CyberRealisticXL`: SDXL checkpoint for realistic portraits.
 
-  <Card title="AnimagineXL">
-    SDXL model for anime character generation, supporting characters from popular series.
-    **Key Features**: Anime, Popular Characters, SDXL
-  </Card>
+  * `BrainDance`: SD1.5 checkpoint for cartoon, anime and watercolor styles.
 
-  <Card title="CyberRealisticXL">
-    SDXL model designed for realistic portraits and lifelike images.
-    **Key Features**: Realistic Portraits, SDXL
-  </Card>
+  * `BlazingDrive`: SD1.5 checkpoint for anime characters and scenes.
 
-  <Card title="BrainDance">
-    Generate cartoon, anime, and watercolor-style art with SD1.5.
-    **Key Features**: Cartoon, Anime, Watercolor
-  </Card>
+  * `YamersCartoonArcadia`: SD1.5 checkpoint for stylized 2D cartoon.
 
-  <Card title="BlazingDrive">
-    SD1.5 model for anime characters and scenes.
-    **Key Features**: Anime, Character Design
-  </Card>
+  * `ArchitectureRealMix`: SD1.5 checkpoint for architectural design, landscape design, urban design, and interior design.
 
-  <Card title="YamersCartoonArcadia">
-    2D cartoon style model using SD1.5 for creating stylized images.
-    **Key Features**: 2D Cartoon, Stylized
-  </Card>
+  * `ArthemyComics`: SD1.5 checkpoint for fantasy cartoon images.
 
-  <Card title="ArchitectureRealMix">
-    SD1.5 model for architectural and landscape design.
-    **Key Features**: Architecture, Landscape, Design
-  </Card>
+  * `ArthemyReal`: SD1.5 checkpoint for fantasy-style and realistic-looking images.
 
-  <Card title="ArthemyComics">
-    SD1.5 model for fantasy comic-style images.
-    **Key Features**: Fantasy Comics, SD1.5
-  </Card>
+  * `DreamShaperXL`: SDXL checkpoint that aims at doing everything well, including photos, art, anime, and manga styles.
 
-  <Card title="ArthemyReal">
-    SD1.5 model for fantasy-style and realistic-looking images.
-    **Key Features**: Fantasy-realistic Mix, SD1.5
-  </Card>
+  * `AAMXLAnimeMix`: SDXL checkpoint for anime art and hentai.
 
-  <Card title="DreamShaperXL">
-    SDXL model for a wide range of styles, from photos to art, anime, and manga.
-    **Key Features**: Versatile, SDXL, Artistic
-  </Card>
+  * `SDXLUnstableDiffusersV11`: SDXL checkpoint that enhances SDXL capabilities in creating vibrant arts, designs and photo-realistic images.
 
-  <Card title="AAMXLAnimeMix">
-    SDXL model for generating anime art and hentai.
-    **Key Features**: Anime Art, Hentai, SDXL
-  </Card>
+  * `SDXL`: general-purpose image generation model developed by Stability AI.
 
-  <Card title="SDXLUnstableDiffusersV11">
-    Enhances SDXL for vibrant, photo-realistic imagery.
-    **Key Features**: Vibrant, Photo-realistic, SDXL
-  </Card>
+#### Understanding Image Prompting
 
-  <Card title="SDXL">
-    General-purpose image generation model by Stability AI.
-    **Key Features**: General-purpose, SDXL
-  </Card>
+Stable Diffusion can benefit significantly from the use of comma-separated words and phrases in its prompts. Using commas effectively organizes prompts into distinct elements, enhancing clarity and aiding in the generation of more relevant images. For example, a prompt structured as "a cat, a dog, a tree" allows the model to interpret each item separately, which can lead to more accurate and coherent outputs compared to a continuous paragraph of description. This practice is especially useful for creators who want to ensure that specific attributes or elements are emphasized in their generated images. 
 
-</CardGroup>
+Flux models work best if the prompt contains complete sentences depicting the image. Comma-separated tags are not recommended. This is a major difference between Stable Diffusion and Flux.
+
+LoRA is a fine-tuning technique that makes a model learn a specific concept, style, item, or character. LoRA requires "trigger words" to function. For example, the phrase "Heuristai logo" must be included if you want the `HeuristLogo` model to generate a correct logo. Some LoRA models require multiple words or phrases to trigger effectively.
+
+We recommend visiting [Heurist Imagine](https://imagine.heurist.ai) and see the example prompts of the models that you want to use.
+
+### Need More Models?
+
+Any image generation models from [Civitai](https://civitai.com/) and LLMs from [HuggingFace](https://huggingface.co/) can be supported upon request. If you're interested in hosting your models on Heurist, or if you want customized models that adapts to your specific use cases, please contact us at **team@heurist.xyz**
