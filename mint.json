@@ -15,6 +15,11 @@
     "name": "Support",
     "url": "mailto:team@heurist.xyz"
   },
+  "api": {
+    "playground": {
+      "disableProxy": true
+    }
+  },
   "tabs": [
     {
       "name": "Developer Guide",
