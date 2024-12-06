@@ -119,16 +119,6 @@
                       "SDXLUnstableDiffusersV11",
                       "SDXL"
                     ]
-                  },
-                  "deadline": {
-                    "type": "integer",
-                    "description": "Job deadline in minutes",
-                    "example": 60
-                  },
-                  "priority": {
-                    "type": "integer",
-                    "description": "Job priority (higher number means higher priority)",
-                    "example": 1
                   }
                 },
                 "required": ["job_id", "model_input", "model_id"]
