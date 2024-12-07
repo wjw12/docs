@@ -96,34 +96,34 @@
     {
       "group": "Developer Reference",
       "pages": [
-        "dev-guide/reference/integration-overview",
-        "dev-guide/reference/supported-models",
-        "dev-guide/reference/image-prompting"
+        "dev-guide/integration-overview",
+        "dev-guide/supported-models",
+        "dev-guide/image-prompting"
       ]
     },
     {
       "group": "REST API",
       "pages": [
-        "dev-guide/api-reference/image-generation/introduction",
-        "dev-guide/api-reference/image-generation/endpoint"
+        "dev-guide/image-generation/introduction",
+        "dev-guide/image-generation/endpoint"
       ]
     },
     {
       "group": "Heurist SDK",
       "pages": [
-        "dev-guide/api-reference/heurist-sdk/introduction",
-        "dev-guide/api-reference/heurist-sdk/getting-started",
-        "dev-guide/api-reference/heurist-sdk/basic-image-generation",
-        "dev-guide/api-reference/heurist-sdk/smartgen",
-        "dev-guide/api-reference/heurist-sdk/comfyui-workflow"
+        "dev-guide/heurist-sdk/introduction",
+        "dev-guide/heurist-sdk/getting-started",
+        "dev-guide/heurist-sdk/basic-image-generation",
+        "dev-guide/heurist-sdk/smartgen",
+        "dev-guide/heurist-sdk/comfyui-workflow"
       ]
     },
     {
       "group": "LLM Gateway",
       "pages": [
-        "dev-guide/api-reference/llm-gateway/introduction",
-        "dev-guide/api-reference/llm-gateway/endpoint",
-        "dev-guide/api-reference/llm-gateway/llm-tool-calling"
+        "dev-guide/llm-gateway/introduction",
+        "dev-guide/llm-gateway/endpoint",
+        "dev-guide/llm-gateway/llm-tool-calling"
       ]
     }
   ],
