@@ -115,7 +115,14 @@
         "dev-guide/heurist-sdk/getting-started",
         "dev-guide/heurist-sdk/basic-image-generation",
         "dev-guide/heurist-sdk/smartgen",
-        "dev-guide/heurist-sdk/comfyui-workflow"
+        {
+          "group": "ComfyUI Workflow",
+          "pages": [
+            "dev-guide/heurist-sdk/comfyui-workflow",
+            "dev-guide/heurist-sdk/comfyui-upscaling",
+            "dev-guide/heurist-sdk/comfyui-txt2vid"
+          ]
+        }
       ]
     },
     {
