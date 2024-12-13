@@ -11,6 +11,16 @@ ComfyUI is an open-source program that allows users to use generative AI such as
 
 [SDK source code](https://github.com/heurist-network/heurist-sdk/blob/main/packages/workflow)
 
+# Available Workflows
+
+The SDK currently supports the following ComfyUI workflows:
+- [Text to Video Generation](/dev-guide/heurist-sdk/comfyui-txt2vid) - Generate videos from text descriptions
+- [Image Upscaling](/dev-guide/heurist-sdk/comfyui-upscaling) - Upscale images while maintaining quality
+
+# Core Concepts
+
+Each workflow in ComfyUI is represented by a `WorkflowTask`. The SDK provides a base class that handles common functionality, which specific workflow implementations extend with their unique requirements.
+
 # Data Structures
 
 Each `WorkflowTask` represents a task of a specific ComfyUI workflow (identified by a JSON workflow file describing the node structures in ComfyUI). A derived class of `WorkflowTask` is defined for each individual workflow, including necessary input parameters.

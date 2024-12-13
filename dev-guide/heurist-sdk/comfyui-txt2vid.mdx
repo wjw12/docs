@@ -5,6 +5,8 @@ description: "Generate videos from text descriptions using advanced AI models."
 
 > **In Development**: This feature is in development. Not ready for use.
 
+This workflow extends the base [ComfyUI Workflow](/dev-guide/heurist-sdk/comfyui-workflow) functionality to support text-to-video generation.
+
 # Example Request
 
 ```python
@@ -144,27 +146,3 @@ enum WorkflowTaskType {
   Text2Video = 'txt2vid'
 }
 ```
-
-# Additional Methods
-### executeWorkflow
-Executes a workflow task without waiting for the result.
-
-``` code
-async executeWorkflow(task: WorkflowTask): Promise<string>
-```
-Returns a Promise that resolves to the task ID.
-
-### queryTaskResult
-Queries the result of a previously executed task.
-
-```code
-async queryTaskResult(task_id: string): Promise<WorkflowTaskResult>
-```
-Returns a Promise that resolves to the task result.
-
-### cancelTask
-Cancels a previously submitted task.
-``` code
-async cancelTask(task_id: string): Promise<{ task_id: string; msg: string }>
-```
-Returns a Promise that resolves to the task ID and message.
