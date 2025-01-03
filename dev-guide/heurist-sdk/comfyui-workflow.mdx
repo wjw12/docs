@@ -5,108 +5,101 @@ description: "Execute ComfyUI workflows such as image upscaling and video genera
 
 > **In Development**: This feature is in development. Not ready for use.
 
-# Example Request
+# Introduction
 
-```python 
-import Heurist from 'heurist'
- 
-const heurist = new Heurist({
-  apiKey: process.env['HEURIST_API_KEY'],
-})
- 
-async function main() {
-  const upscalerTask = new UpscalerTask({
-    consumer_id: 'example-id',
-    image_url: 'https://example.com/sample.jpg',
-    timeout_seconds: 300 // optional
-  });
-  const response = await heurist.workflow.executeWorkflowAndWaitForResult(upscalerTask);
-}
- 
-main()
-```
-# Example Response
+ComfyUI is an open-source program that allows users to use generative AI such as text-to-image, image-to-image, text-to-video and more through a flexible node-based interface. Heurist SDK abstracts away the complexity of ComfyUI, and provides simple functions in Node.js SDK to execute ComfyUI workflows on distributed GPU miners.
 
-```json
-{
-  "task_id": "example-task-id",
-  "status": "finished",
-  "result": "upscaled-image.png"
-}
-```
+[SDK source code](https://github.com/heurist-network/heurist-sdk/blob/main/packages/workflow)
 
-# Parameters
+# Available Workflows
 
-**Type**: `UpscalerTask`
+The SDK currently supports the following ComfyUI workflows:
+- [Text to Video Generation](/dev-guide/heurist-sdk/comfyui-txt2vid) - Generate videos from text descriptions
+- [Image Upscaling](/dev-guide/heurist-sdk/comfyui-upscaling) - Upscale images while maintaining quality
 
-| Property | Type | Required | Description |
-|----------|------|----------|-------------|
-| consumer_id | string | true | The ID of the consumer initiating the task. Preferably use UUID to uniquely identify the consumer. This is used to allocate computing resource for this consumer. |
-| image_url | string | true | The URL of the image to be upscaled. |
-| job_id_prefix | string | false | An optional prefix for the job ID. Default is "sdk-workflow". |
-| timeout_seconds | number | false | An optional timeout for the task in seconds. If the task is not finished within the timeout, it will be canceled. |
+# Core Concepts
 
-# Returns
+Each workflow in ComfyUI is represented by a `WorkflowTask`. The SDK provides a base class that handles common functionality, which specific workflow implementations extend with their unique requirements.
 
-**Type**: `WorkflowTaskResult`
+# Data Structures
 
-| Property | Type | Required | Description |
-|----------|------|----------|-------------|
-| task_id | string | true | The ID of the executed task. |
-| status | enum | true | The status of the task. |
-| result | any | false | The result of the task, if available. |
+Each `WorkflowTask` represents a task of a specific ComfyUI workflow (identified by a JSON workflow file describing the node structures in ComfyUI). A derived class of `WorkflowTask` is defined for each individual workflow, including necessary input parameters.
 
-```json
-{
-  task_id: 'example-task-id',
-  status: 'finished',
-  result: {
-    url: 'https://example.com/upscaled-image.png'
+## Base Class
+```javascript
+abstract class WorkflowTask {
+  public consumer_id?: string;
+  public job_id_prefix?: string;
+  public timeout_seconds?: number;
+  public workflow_id?: string;
+  public api_key?: string;
+
+  constructor(options: WorkflowTaskOptions) {
+    this.consumer_id = options.consumer_id;
+    this.job_id_prefix = options.job_id_prefix;
+    this.timeout_seconds = options.timeout_seconds;
+    this.workflow_id = options.workflow_id;
+    this.api_key = options.api_key;
   }
+
+  abstract get task_type(): WorkflowTaskType;
+  abstract get task_details(): Record<string, any>;
 }
 ```
 
-# Types
-`UpscalerTask`
-
-A class representing an upscaler task, extending the abstract `WorkflowTask` class.
-
-``` javascript
-class UpscalerTask extends WorkflowTask {
-  constructor(options: UpscalerTaskOptions)
-  get task_type(): WorkflowTaskType.Upscaler
-  get task_details(): { parameters: { image: string } }
+## Task Option Type
+```javascript
+interface WorkflowTaskOptions {
+  consumer_id?: string;
+  job_id_prefix?: string;
+  timeout_seconds?: number;
+  workflow_id?: string;
+  api_key?: string;
 }
 ```
 
-`WorkflowTaskType`
-An enum representing the types of workflow tasks.
-``` javascript
-enum WorkflowTaskType {
-  Upscaler = 'upscaler'
+## Task Result Type
+```javascript
+interface WorkflowTaskResult {
+  task_id: string
+  status: 'waiting' | 'running' | 'finished' | 'failed' | 'canceled'
+  result?: any
 }
 ```
+# Functions
 
-# Additional Methods
-### executeWorkflow
+## Execute a workflow
 Executes a workflow task without waiting for the result.
 
-``` code
+```javascript
 async executeWorkflow(task: WorkflowTask): Promise<string>
 ```
+
 Returns a Promise that resolves to the task ID.
 
-### queryTaskResult
+## Query the task result
 Queries the result of a previously executed task.
 
-```code
+```javascript
 async queryTaskResult(task_id: string): Promise<WorkflowTaskResult>
 ```
 Returns a Promise that resolves to the task result.
 
-### cancelTask
+## Execute a workflow and wait for the result
+Executes a workflow and waits until a result is returned. Internally, this function calls `queryTaskResult` at a fixed interval, and throws if the task times out.
+
+```javascript
+async executeWorkflowAndWaitForResult(
+    task: WorkflowTask,
+    timeout: number = 300000,
+    interval: number = 10000
+  ): Promise<WorkflowTaskResult>
+```
+
+## Cancel a task
 Cancels a previously submitted task.
-``` code
+
+```javascript
 async cancelTask(task_id: string): Promise<{ task_id: string; msg: string }>
 ```
 Returns a Promise that resolves to the task ID and message.
