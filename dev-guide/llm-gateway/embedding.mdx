@@ -1,0 +1,35 @@
+---
+title: "Embeddings"
+---
+
+## Overview
+
+Embedding models convert text into numerical vectors (embeddings) that capture semantic meaning. These vectors enable powerful applications like semantic search, text clustering, and similarity analysis. Heurist LLM Gateway provides embedding capabilities consistent with the OpenAI SDK interface.
+
+Embeddings are particularly useful for:
+- Finding similar text content
+- Document clustering and classification
+- Retrieval Augmented Generation (RAG)
+
+## Example Usage
+
+Here's a simple example showing how to generate embeddings using the Heurist API:
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="your_user_id#your_api_key",
+    base_url="https://llm-gateway.heurist.xyz"
+)
+
+embeddings = client.embeddings.create(
+    model="BAAI/bge-large-en-v1.5",
+    input="Hello, world!",
+    encoding_format="float"
+)
+
+print(embeddings.data[0].embedding)
+
+print("Prompt tokens used:", embeddings.usage.prompt_tokens)
+```

@@ -130,7 +130,8 @@
       "pages": [
         "dev-guide/llm-gateway/introduction",
         "dev-guide/llm-gateway/endpoint",
-        "dev-guide/llm-gateway/llm-tool-calling"
+        "dev-guide/llm-gateway/llm-tool-calling",
+        "dev-guide/llm-gateway/embedding"
       ]
     }
   ],
