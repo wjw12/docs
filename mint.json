@@ -98,7 +98,8 @@
       "pages": [
         "dev-guide/integration-overview",
         "dev-guide/supported-models",
-        "dev-guide/image-prompting"
+        "dev-guide/image-prompting",
+        "dev-guide/examples/eliza"
       ]
     },
     {
