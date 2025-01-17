@@ -1,0 +1,55 @@
+---
+title: 'Using Heurist API with Eliza'
+description: 'Learn how to integrate and configure Heurist API with Eliza for enhanced AI capabilities'
+---
+
+Eliza enables developers to build autonomous AI agents. With Heurist API integration, you can access powerful AI models for both language processing and embedding generation.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- Completed the [Eliza quickstart](https://elizaos.github.io/eliza/docs/quickstart/)
+- Obtained your api key immediately with referral code `agent` when fill out this form [Heurist API key](https://dev-api-form.heurist.ai/)
+
+## Environment Configuration
+
+Add these environment variables to your `.env` file:
+
+```env
+# Required Heurist API settings
+HEURIST_API_KEY="<HEURIST_API_KEY>"  # API key for Heurist
+HEURIST_MODEL=FLUX.1-dev                          # Default model for image generation
+HEURIST_EMBEDDING_MODEL=BAAI/bge-large-en-v1.5 # Default embedding model
+USE_HEURIST_EMBEDDING=true                     # Enable Heurist embeddings
+
+# Optional: Task-specific model configuration
+SMALL_HEURIST_MODEL=your_small_model
+MEDIUM_HEURIST_MODEL=your_medium_model
+LARGE_HEURIST_MODEL=your_large_model
+```
+
+## Character Configuration
+
+Configure your character file in JSON format to use Heurist as the model provider:
+
+```json
+{
+    "modelProvider": "heurist"
+}
+```
+
+## Supported Models
+
+### Language Models
+
+For available language models, refer to the [Heurist LLM documentation](https://docs.heurist.ai/dev-guide/supported-models#large-language-models-llms).
+
+### Image Models 
+For available image generation models, refer to the [Heurist Image Models documentation](https://docs.heurist.ai/dev-guide/supported-models#image-generation-models).
+
+### Embedding Model
+
+Currently, Heurist supports the following embedding model:
+
+- BAAI/bge-large-en-v1.5 (Default model for all embedding operations)
