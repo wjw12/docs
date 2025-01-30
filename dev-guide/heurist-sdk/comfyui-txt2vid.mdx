@@ -3,8 +3,6 @@ title: "Text2Video Workflow"
 description: "Generate videos from text descriptions using advanced AI models."
 ---
 
-> **In Development**: This feature is in development. Not ready for use.
-
 This workflow extends the base [ComfyUI Workflow](/dev-guide/heurist-sdk/comfyui-workflow) functionality to support text-to-video generation.
 
 # Example Request
@@ -18,7 +16,7 @@ const heurist = new Heurist({
 
 async function generateVideo() {
   const text2VideoTask = new Text2VideoTask({
-    workflow_id: '3',
+    workflow_id: '1',
     prompt: 'a rabbit moving quickly in a beautiful winter scenery nature trees sunset tracking camera',
     timeout_seconds: 600 // optional
   });
@@ -57,9 +55,15 @@ async function generateVideo() {
     }
   },
   "timeout_seconds": 600,
-  "workflow_id": "3"
+  "workflow_id": "1"
 }
 ```
+
+# Workflow ID Mapping
+
+| Workflow ID | Model |
+|-------------|-------|
+| 1 | Hunyuan |
 
 # Parameters
 

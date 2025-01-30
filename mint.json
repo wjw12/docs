@@ -81,7 +81,6 @@
       "group": "Ecosystem",
       "pages": [
         "ecosystem/imagine",
-        "ecosystem/create-to-earn",
         "ecosystem/imaginaries-nft",
         "ecosystem/loyalty-program"
       ]
@@ -89,7 +88,6 @@
     {
       "group": "Guides",
       "pages": [
-        "guides/miner-guide",
         "guides/ai-101"
       ]
     },
