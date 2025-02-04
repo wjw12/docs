@@ -1,0 +1,60 @@
+---
+title: "Credits System"
+---
+
+Users can purchase API credits with crypto. These credits are used to access Heurist's decentralized AI compute resources, with different API endpoints consuming credits based on their computational requirements.
+
+* 1 USD = 100 credits
+* When paying with HEU tokens, users receive a 20% bonus (120 credits per $1 equivalent)
+
+<img 
+    src="../images/protocol-overview/purchase-credits.jpg" 
+    alt="Heurist Credits Payment Interface"
+    style={{ width: '80%', display: 'block', margin: '0 auto' }}
+/>
+
+Credits can be purchased at [heurist.ai/credits](https://heurist.ai/credits). 
+
+### Credits Consumption
+
+#### 1. Image Generation
+Base pricing is calculated for 1024x1024 resolution with 20 iterations. Other resolutions or iteration counts are priced proportionally.
+
+| Model | Credits per Image |
+|-------|------------------|
+| Stable Diffusion XL/1.5 | 0.05 |
+| Stable Diffusion with LoRA | 0.1 |
+| FLUX.1-dev | 0.2 |
+| FLUX.1-dev with LoRA | 0.5 |
+
+#### 2. Video Generation
+| Model | Duration | Credits |
+|-------|----------|----------|
+| Hunyuan | 5 seconds | 25 |
+
+#### 3. Large Language Models
+Pricing is in credits per million tokens. Each model has separate pricing for input tokens (what you send as prompts) and output tokens (what the model generates).
+
+| Model | Input (per 1M tokens) | Output (per 1M tokens) |
+|-------|----------------------|------------------------|
+| nvidia/llama-3.1-nemotron-70b-instruct | 15 | 30 |
+| qwen/qwen-2.5-coder-32b-instruct | 10 | 18 |
+| mistralai/mixtral-8x7b-instruct | 25 | 25 |
+| mistralai/mixtral-8x22b-instruct | 100 | 100 |
+| meta-llama/llama-3.3-70b-instruct | 15 | 30 |
+| hermes-3-llama3.1-8b | 5 | 10 |
+| deepseek/deepseek-r1 | 800 | 800 |
+| deepseek/deepseek-chat | 90 | 90 |
+| mistralai/mistral-small-24b-instruct | 30 | 30 |
+
+For example, if you send a prompt of 1,000 tokens to Mixtral 8x7B and receive a 500-token response:
+- Input cost: (1,000 / 1,000,000) × 25 = 0.025 credits
+- Output cost: (500 / 1,000,000) × 25 = 0.0125 credits
+- Total cost: 0.0375 credits
+
+#### 4. Embedding Models
+Pricing is in credits per million tokens.
+
+| Model | Input (per 1M tokens) |
+|-------|----------------------|
+| baaiai/bge-large-en-v1.5 | 1 |

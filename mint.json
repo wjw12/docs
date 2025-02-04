@@ -61,10 +61,11 @@
       ]
     },
     {
-      "group": "Protocol Overview",
+      "group": "Overview",
       "pages": [
         "protocol-overview/litepaper",
         "protocol-overview/tokenomics",
+        "protocol-overview/credits",
         {
           "group": "Mining",
           "pages": [
