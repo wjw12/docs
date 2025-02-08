@@ -7,7 +7,7 @@ This workflow extends the base [ComfyUI Workflow](/dev-guide/heurist-sdk/comfyui
 
 # Example Request
 
-```python
+```javascript
 import Heurist from 'heurist'
 
 const heurist = new Heurist({
@@ -30,6 +30,7 @@ async function generateImage() {
 
   console.log('Generated image URL:', response.result);
 }
+```
 
 # Example Response
 
@@ -112,7 +113,7 @@ const fluxLoraTask = new FluxLoraTask({
 `FluxLoraTask`
 
 A class representing a FluxLora task, extending the abstract `WorkflowTask` class.
-```python
+```javascript
 class FluxLoraTask extends WorkflowTask {
   constructor(options: FluxLoraTaskOptions)
   get task_type(): WorkflowTaskType.FluxLora
