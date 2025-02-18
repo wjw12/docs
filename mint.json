@@ -79,6 +79,13 @@
       ]
     },
     {
+      "group": "Agent Framework",
+      "pages": [
+        "agent-framework/social-agents",
+        "agent-framework/heurist-mesh"
+      ]
+    },
+    {
       "group": "Ecosystem",
       "pages": [
         "ecosystem/imagine",
