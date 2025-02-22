@@ -66,6 +66,7 @@
         "protocol-overview/litepaper",
         "protocol-overview/tokenomics",
         "protocol-overview/credits",
+        "protocol-overview/stake",
         {
           "group": "Mining",
           "pages": [
