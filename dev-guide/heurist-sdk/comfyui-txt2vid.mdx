@@ -27,7 +27,8 @@ HEURIST_WORKFLOW_URL=https://sequencer-v2.heurist.xyz
 import Heurist from 'heurist'
 
 const heurist = new Heurist({
-  apiKey: process.env['HEURIST_API_KEY']
+  apiKey: process.env['HEURIST_API_KEY'],
+  workflowUrl: process.env['HEURIST_WORKFLOW_URL']
 });
 
 async function generateVideo() {
@@ -51,27 +52,18 @@ async function generateVideo() {
 
 ```json
 {
-  "task_id": "7599f1f038",
-  "create_timestamp": 1733965543,
-  "inference_latency": 0.608921,
-  "upload_latency": 2.316333,
+  "task_id": "0cb8c95459",
   "task_type": "txt2vid",
+  "workflow_id": "1",
   "status": "finished",
-  "result": "https://example.com/generated-video.webp",
-  "task_details": {
-    "parameters": {
-      "fps": 24,
-      "height": 480,
-      "length": 37,
-      "prompt": "a rabbit moving quickly in a beautiful winter scenery nature trees sunset tracking camera",
-      "quality": 80,
-      "seed": 704883238463297,
-      "steps": 30,
-      "width": 848
-    }
-  },
-  "timeout_seconds": 600,
-  "workflow_id": "1"
+  "timeout_seconds": 3600,
+  "create_timestamp": 1740286322,
+  "result": "https://sequencer-v2.heurist.xyz/files/test-video/hunyuan-fp8-0x4dB5689cF219f8AD1CDC9AE71014c8B51Cb83784-0cb8c95459.mp4",
+  "miner_id": "0x4dB5689cF219f8AD1CDC9AE71014c8B51Cb83784",
+  "queue_position": 1,
+  "inference_latency": 386.88025,
+  "upload_latency": 2.176632,
+  "msg": ""
 }
 ```
 
@@ -83,13 +75,6 @@ async function generateVideo() {
 |----------|------|----------|-------------|
 | workflow_id | string | true | The ID of the workflow to execute. |
 | prompt | string | true | The prompt to use for the video generation. |
-| width | number | false | The width of the video. Default is 848. |
-| height | number | false | The height of the video. Default is 480. |
-| length | number | false | The length of the video in frames. Default is 37. |
-| steps | number | false | The number of steps to use for the video generation. Default is 30. |
-| seed | number | false | The seed to use for the video generation. |
-| fps | number | false | The frames per second of the video. Default is 24. |
-| quality | number | false | The quality of the video. Default is 80. |
 | job_id_prefix | string | false | An optional prefix for the job ID. Default is "sdk-workflow". |
 | timeout_seconds | number | false | The timeout for the task in seconds. If the task is not finished within the timeout, it will be canceled. |
 | consumer_id | string | false | The ID of the consumer. |
@@ -102,27 +87,30 @@ async function generateVideo() {
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | task_id | string | true | The ID of the executed task. |
-| status | enum | true | The status of the task. |
-| result | any | false | The result of the task, if available. |
-| task_details | any | false | The details of the task, if available. |
-| timeout_seconds | number | false | The timeout for the task in seconds. |
-| workflow_id | string | false | The ID of the workflow that executed the task. |
-| create_timestamp | number | false | The timestamp when the task was created. |
-| inference_latency | number | false | The latency of the inference in seconds. |
-| upload_latency | number | false | The latency of the upload in seconds. |
+| task_type | string | true | The type of the task (e.g., 'txt2vid'). |
+| workflow_id | string | true | The ID of the workflow that executed the task. |
+| status | string | true | The status of the task ('waiting', 'running', 'finished', 'failed', 'canceled'). |
+| timeout_seconds | number | true | The timeout for the task in seconds. |
+| create_timestamp | number | true | The timestamp when the task was created. |
+| result | string | false | The URL of the generated video file, if available. |
+| miner_id | string | true | The ID of the miner that processed the task. |
+| queue_position | number | true | The position of the task in the queue (1 means currently processing). |
+| inference_latency | number | false | The processing time in seconds for the video generation. |
+| upload_latency | number | false | The time taken to upload the result in seconds. |
+| msg | string | false | Additional message or error information if any. |
 
 # Authentication
 Authentication uses a combined consumer ID and API key format: `consumerId#apiKey`. You can provide these in two ways:
 
 1. In the Heurist client initialization using environment variables:
-```javascript
+```typescript
 const heurist = new Heurist({
   apiKey: process.env['HEURIST_API_KEY']  // format: consumerId#apiKey
 });
 ```
 
 2. In the `Text2VideoTask` object, the task-specific values will override the client defaults if provided.
-```javascript
+```typescript
 const text2VideoTask = new Text2VideoTask({
   consumer_id: 'consumerId',
   api_key: 'apiKey',
@@ -138,24 +126,13 @@ A class representing a text-to-video task, extending the abstract `WorkflowTask`
 class Text2VideoTask extends WorkflowTask {
   constructor(options: Text2VideoTaskOptions)
   get task_type(): WorkflowTaskType.Text2Video
-  get task_details(): {
-    parameters: {
-      prompt: string
-      width?: number
-      height?: number
-      length?: number
-      steps?: number
-      seed?: number
-      fps?: number
-      quality?: number
-    }
-  }
+  get task_details(): { parameters: { prompt: string } }
 }
 ```
 `WorkflowTaskType`
 
 An enum representing the types of workflow tasks.
-``` javascript
+``` typescript
 enum WorkflowTaskType {
   Text2Video = 'txt2vid'
 }
