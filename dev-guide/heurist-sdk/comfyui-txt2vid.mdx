@@ -5,9 +5,25 @@ description: "Generate videos from text descriptions using advanced AI models."
 
 This workflow extends the base [ComfyUI Workflow](/dev-guide/heurist-sdk/comfyui-workflow) functionality to support text-to-video generation.
 
+# Supported Models to Workflow ID Mapping
+
+| Workflow ID | Model |
+|-------------|-------|
+| 1 | Hunyuan |
+
+# Before you start
+
+1. [Get an API key](https://heurist.ai/credits)
+2. Define environment variables in `.env` file:
+
+```
+HEURIST_API_KEY=your_api_key
+HEURIST_WORKFLOW_URL=https://sequencer-v2.heurist.xyz
+```
+
 # Example Request
 
-```python
+```typescript
 import Heurist from 'heurist'
 
 const heurist = new Heurist({
@@ -58,12 +74,6 @@ async function generateVideo() {
   "workflow_id": "1"
 }
 ```
-
-# Workflow ID Mapping
-
-| Workflow ID | Model |
-|-------------|-------|
-| 1 | Hunyuan |
 
 # Parameters
 
@@ -124,7 +134,7 @@ const text2VideoTask = new Text2VideoTask({
 `Text2VideoTask`
 
 A class representing a text-to-video task, extending the abstract `WorkflowTask` class.
-```python
+```typescript
 class Text2VideoTask extends WorkflowTask {
   constructor(options: Text2VideoTaskOptions)
   get task_type(): WorkflowTaskType.Text2Video

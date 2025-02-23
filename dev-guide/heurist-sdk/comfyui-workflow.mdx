@@ -3,8 +3,6 @@ title: "ComfyUI Workflow"
 description: "Execute ComfyUI workflows such as image upscaling and video generation."
 ---
 
-> **In Development**: This feature is in development. Not ready for use.
-
 # Introduction
 
 ComfyUI is an open-source program that allows users to use generative AI such as text-to-image, image-to-image, text-to-video and more through a flexible node-based interface. Heurist SDK abstracts away the complexity of ComfyUI, and provides simple functions in Node.js SDK to execute ComfyUI workflows on distributed GPU miners.
@@ -20,6 +18,16 @@ The SDK currently supports the following ComfyUI workflows:
 # Core Concepts
 
 Each workflow in ComfyUI is represented by a `WorkflowTask`. The SDK provides a base class that handles common functionality, which specific workflow implementations extend with their unique requirements.
+
+# Before you start
+
+1. [Get an API key](https://heurist.ai/credits)
+2. Define environment variables in `.env` file:
+
+```
+HEURIST_API_KEY=your_api_key
+HEURIST_WORKFLOW_URL=https://sequencer-v2.heurist.xyz
+```
 
 # Data Structures
 
