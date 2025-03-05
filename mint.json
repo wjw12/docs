@@ -112,6 +112,7 @@
     {
       "group": "REST API",
       "pages": [
+        "dev-guide/heurist-mesh/introduction",
         "dev-guide/image-generation/introduction",
         "dev-guide/image-generation/endpoint"
       ]
