@@ -308,6 +308,7 @@
                   "agent_id": {
                     "type": "string",
                     "description": "Identifier of the agent to use",
+                    "default": "CoinGeckoTokenInfoAgent",
                     "enum": [
                       "AaveAgent",
                       "AlloraPricePredictionAgent",
@@ -338,7 +339,8 @@
                         "properties": {
                           "query": {
                             "type": "string",
-                            "description": "Natural language query"
+                            "description": "Natural language query",
+                            "default": "Tell me about ethereum"
                           }
                         }
                       },
@@ -418,6 +420,7 @@
                   "agent_id": {
                     "type": "string",
                     "description": "Identifier of the agent to use",
+                    "default": "CoinGeckoTokenInfoAgent",
                     "enum": [
                       "AaveAgent",
                       "AlloraPricePredictionAgent",
@@ -453,7 +456,8 @@
                         "properties": {
                           "query": {
                             "type": "string",
-                            "description": "Natural language query"
+                            "description": "Natural language query",
+                            "default": "Tell me about ethereum"
                           }
                         }
                       },
