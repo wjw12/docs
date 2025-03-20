@@ -13,10 +13,7 @@
       "url": "{server}",
       "variables": {
         "server": {
-          "enum": [
-            "http://sequencer.heurist.xyz",
-            "https://llm-gateway.heurist.xyz"
-          ],
+          "enum": ["http://sequencer.heurist.xyz", "https://llm-gateway.heurist.xyz"],
           "default": "http://sequencer.heurist.xyz"
         }
       }
@@ -29,151 +26,150 @@
   ],
   "paths": {
     "/submit_job": {
-  "post": {
-    "servers": [
-      {
-        "url": "http://sequencer.heurist.xyz"
-      }
-    ],
-    "description": "Generate an image based on the provided text prompt.",
-    "requestBody": {
-      "description": "JSON payload to specify the image generation job details",
-      "content": {
-        "application/json": {
-          "schema": {
-            "type": "object",
-            "properties": {
-              "job_id": {
-                "type": "string",
-                "description": "A unique identifier for the job",
-                "example": "heurist-sdk-job-C254845d2522"
-              },
-              "model_input": {
+      "post": {
+        "servers": [
+          {
+            "url": "http://sequencer.heurist.xyz"
+          }
+        ],
+        "description": "Generate an image based on the provided text prompt.",
+        "requestBody": {
+          "description": "JSON payload to specify the image generation job details",
+          "content": {
+            "application/json": {
+              "schema": {
                 "type": "object",
                 "properties": {
-                  "SD": {
+                  "job_id": {
+                    "type": "string",
+                    "description": "A unique identifier for the job",
+                    "example": "heurist-sdk-job-C254845d2522"
+                  },
+                  "model_input": {
                     "type": "object",
                     "properties": {
-                      "prompt": {
-                        "type": "string",
-                        "description": "Textual description to generate the image",
-                        "example": "A beautiful landscape with mountains and a river"
-                      },
-                      "neg_prompt": {
-                        "type": "string",
-                        "description": "Textual description to avoid certain elements in the image",
-                        "example": "Avoid any signs of human presence"
-                      },
-                      "num_iterations": {
-                        "type": "integer",
-                        "description": "Number of iterations for the image generation process",
-                        "example": 20
-                      },
-                      "width": {
-                        "type": "integer",
-                        "description": "Width of the generated image in pixels",
-                        "example": 1024
-                      },
-                      "height": {
-                        "type": "integer",
-                        "description": "Height of the generated image in pixels",
-                        "example": 512
-                      },
-                      "guidance_scale": {
-                        "type": "number",
-                        "format": "float",
-                        "description": "Guidance scale to control the adherence to the prompt",
-                        "example": 7.5
-                      },
-                      "seed": {
-                        "type": "integer",
-                        "description": "Seed for the random number generator to ensure reproducibility",
-                        "example": -1
+                      "SD": {
+                        "type": "object",
+                        "properties": {
+                          "prompt": {
+                            "type": "string",
+                            "description": "Textual description to generate the image",
+                            "example": "A beautiful landscape with mountains and a river"
+                          },
+                          "neg_prompt": {
+                            "type": "string",
+                            "description": "Textual description to avoid certain elements in the image",
+                            "example": "Avoid any signs of human presence"
+                          },
+                          "num_iterations": {
+                            "type": "integer",
+                            "description": "Number of iterations for the image generation process",
+                            "example": 20
+                          },
+                          "width": {
+                            "type": "integer",
+                            "description": "Width of the generated image in pixels",
+                            "example": 1024
+                          },
+                          "height": {
+                            "type": "integer",
+                            "description": "Height of the generated image in pixels",
+                            "example": 512
+                          },
+                          "guidance_scale": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "Guidance scale to control the adherence to the prompt",
+                            "example": 7.5
+                          },
+                          "seed": {
+                            "type": "integer",
+                            "description": "Seed for the random number generator to ensure reproducibility",
+                            "example": -1
+                          }
+                        },
+                        "required": ["prompt"]
                       }
                     },
-                    "required": ["prompt"]
+                    "required": ["SD"]
+                  },
+                  "model_id": {
+                    "type": "string",
+                    "description": "The identifier of the image generation model",
+                    "enum": [
+                      "HeuristLogo",
+                      "FLUX.1-dev",
+                      "PepeXL",
+                      "Zeek",
+                      "MagusDevon",
+                      "Aurora",
+                      "AnimagineXL",
+                      "CyberRealisticXL",
+                      "BrainDance",
+                      "BlazingDrive",
+                      "YamersCartoonArcadia",
+                      "ArchitectureRealMix",
+                      "ArthemyComics",
+                      "ArthemyReal",
+                      "DreamShaperXL",
+                      "AAMXLAnimeMix",
+                      "SDXLUnstableDiffusersV11",
+                      "SDXL"
+                    ]
+                  },
+                  "deadline": {
+                    "type": "integer",
+                    "description": "Maximum time allowed for job completion in seconds",
+                    "example": 60,
+                    "default": 60
                   }
                 },
-                "required": ["SD"]
-              },
-              "model_id": {
-                "type": "string",
-                "description": "The identifier of the image generation model",
-                "enum": [
-                  "HeuristLogo",
-                  "FLUX.1-dev",
-                  "PepeXL",
-                  "Zeek",
-                  "MagusDevon",
-                  "Aurora",
-                  "AnimagineXL",
-                  "CyberRealisticXL",
-                  "BrainDance",
-                  "BlazingDrive",
-                  "YamersCartoonArcadia",
-                  "ArchitectureRealMix",
-                  "ArthemyComics",
-                  "ArthemyReal",
-                  "DreamShaperXL",
-                  "AAMXLAnimeMix",
-                  "SDXLUnstableDiffusersV11",
-                  "SDXL"
-                ]
-              },
-              "deadline": {
-                "type": "integer",
-                "description": "Maximum time allowed for job completion in seconds",
-                "example": 60,
-                "default": 60
+                "required": ["job_id", "model_input", "model_id"]
               }
-            },
-            "required": ["job_id", "model_input", "model_id"]
-          }
-        }
-      },
-      "required": true
-    },
-    "responses": {
-      "200": {
-        "description": "Job successfully submitted",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "object",
-              "properties": {
-                "image_url": {
-                  "type": "string",
-                  "description": "URL pointing to the generated image"
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Job successfully submitted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image_url": {
+                      "type": "string",
+                      "description": "URL pointing to the generated image"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, invalid parameters or missing fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access, invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
           }
         }
-      },
-      "400": {
-        "description": "Bad request, invalid parameters or missing fields",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/Error"
-            }
-          }
-        }
-      },
-      "401": {
-        "description": "Unauthorized access, invalid or missing authentication token",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/Error"
-            }
-          }
-        }
       }
-    }
-  }
-}
-,
+    },
     "/v1/chat/completions": {
       "post": {
         "servers": [
@@ -277,6 +273,331 @@
           },
           "401": {
             "description": "Unauthorized access, invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mesh_request": {
+      "post": {
+        "servers": [
+          {
+            "url": "https://sequencer-v2.heurist.xyz"
+          }
+        ],
+        "description": "Make a synchronous request to an AI agent.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "JSON payload for the mesh request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["agent_id"],
+                "properties": {
+                  "agent_id": {
+                    "type": "string",
+                    "description": "Identifier of the agent to use",
+                    "enum": [
+                      "AaveAgent",
+                      "AlloraPricePredictionAgent",
+                      "BitquerySolanaTokenInfoAgent",
+                      "CarvOnchainDataAgent",
+                      "CoinGeckoTokenInfoAgent",
+                      "DeepResearchAgent",
+                      "DexScreenerTokenInfoAgent",
+                      "DuckDuckGoSearchAgent",
+                      "ElfaTwitterIntelligenceAgent",
+                      "ExaSearchAgent",
+                      "FirecrawlSearchAgent",
+                      "FundingRateAgent",
+                      "GoplusAnalysisAgent",
+                      "MasaTwitterSearchAgent",
+                      "MetaSleuthSolTokenWalletClusterAgent",
+                      "PumpFunTokenAgent",
+                      "ZerionWalletAnalysisAgent",
+                      "ZkIgniteAnalystAgent"
+                    ]
+                  },
+                  "input": {
+                    "type": "object",
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "required": ["query"],
+                        "properties": {
+                          "query": {
+                            "type": "string",
+                            "description": "Natural language query"
+                          }
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "required": ["tool"],
+                        "properties": {
+                          "tool": {
+                            "type": "string",
+                            "description": "Tool name to execute"
+                          },
+                          "tool_arguments": {
+                            "type": "object",
+                            "description": "Arguments for the specified tool"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "object",
+                      "description": "Agent-specific response data"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mesh_task_create": {
+      "post": {
+        "servers": [
+          {
+            "url": "https://sequencer-v2.heurist.xyz"
+          }
+        ],
+        "description": "Create an asynchronous task.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "JSON payload for creating a task",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["agent_id", "task_details"],
+                "properties": {
+                  "agent_id": {
+                    "type": "string",
+                    "description": "Identifier of the agent to use",
+                    "enum": [
+                      "AaveAgent",
+                      "AlloraPricePredictionAgent",
+                      "BitquerySolanaTokenInfoAgent",
+                      "CarvOnchainDataAgent",
+                      "CoinGeckoTokenInfoAgent",
+                      "DeepResearchAgent",
+                      "DexScreenerTokenInfoAgent",
+                      "DuckDuckGoSearchAgent",
+                      "ElfaTwitterIntelligenceAgent",
+                      "ExaSearchAgent",
+                      "FirecrawlSearchAgent",
+                      "FundingRateAgent",
+                      "GoplusAnalysisAgent",
+                      "MasaTwitterSearchAgent",
+                      "MetaSleuthSolTokenWalletClusterAgent",
+                      "PumpFunTokenAgent",
+                      "ZerionWalletAnalysisAgent",
+                      "ZkIgniteAnalystAgent"
+                    ]
+                  },
+                  "agent_type": {
+                    "type": "string",
+                    "description": "Type of agent",
+                    "default": "AGENT"
+                  },
+                  "task_details": {
+                    "type": "object",
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "required": ["query"],
+                        "properties": {
+                          "query": {
+                            "type": "string",
+                            "description": "Natural language query"
+                          }
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "required": ["tool"],
+                        "properties": {
+                          "tool": {
+                            "type": "string",
+                            "description": "Tool name to execute"
+                          },
+                          "tool_arguments": {
+                            "type": "object",
+                            "description": "Arguments for the specified tool"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Task created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task_id": {
+                      "type": "string",
+                      "description": "Unique task identifier"
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": "Status message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mesh_task_query": {
+      "post": {
+        "servers": [
+          {
+            "url": "https://sequencer-v2.heurist.xyz"
+          }
+        ],
+        "description": "Query the status of an asynchronous task.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "JSON payload for querying task status",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["task_id"],
+                "properties": {
+                  "task_id": {
+                    "type": "string",
+                    "description": "Task identifier to query"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Task status retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Current task status"
+                    },
+                    "reasoning_steps": {
+                      "type": "array",
+                      "description": "List of reasoning steps",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "timestamp": {
+                            "type": "integer",
+                            "description": "Unix timestamp"
+                          },
+                          "content": {
+                            "type": "string",
+                            "description": "Step description"
+                          },
+                          "is_sent": {
+                            "type": "boolean",
+                            "description": "Whether step was sent"
+                          }
+                        }
+                      }
+                    },
+                    "result": {
+                      "type": "object",
+                      "description": "Task result when complete",
+                      "properties": {
+                        "response": {
+                          "type": "object",
+                          "description": "Agent response data"
+                        },
+                        "success": {
+                          "type": "boolean",
+                          "description": "Whether task completed successfully"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access",
             "content": {
               "application/json": {
                 "schema": {
