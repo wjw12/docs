@@ -56,9 +56,7 @@
   "navigation": [
     {
       "group": "Getting Started",
-      "pages": [
-        "introduction"
-      ]
+      "pages": ["introduction"]
     },
     {
       "group": "Overview",
@@ -69,11 +67,7 @@
         "protocol-overview/stake",
         {
           "group": "Mining",
-          "pages": [
-            "protocol-overview/mining",
-            "protocol-overview/mining/season-1",
-            "protocol-overview/mining/season-2"
-          ]
+          "pages": ["protocol-overview/mining", "protocol-overview/mining/season-1", "protocol-overview/mining/season-2"]
         },
         "protocol-overview/brand-assets",
         "protocol-overview/contract-addresses"
@@ -81,38 +75,29 @@
     },
     {
       "group": "Agent Framework",
-      "pages": [
-        "agent-framework/social-agents",
-        "agent-framework/heurist-mesh"
-      ]
+      "pages": ["agent-framework/social-agents", "agent-framework/heurist-mesh"]
     },
     {
       "group": "Ecosystem",
-      "pages": [
-        "ecosystem/imagine",
-        "ecosystem/imaginaries-nft",
-        "ecosystem/loyalty-program"
-      ]
+      "pages": ["ecosystem/imagine", "ecosystem/imaginaries-nft", "ecosystem/loyalty-program"]
     },
     {
       "group": "Guides",
-      "pages": [
-        "guides/ai-101"
-      ]
+      "pages": ["guides/ai-101"]
     },
     {
       "group": "Developer Reference",
-      "pages": [
-        "dev-guide/integration-overview",
-        "dev-guide/supported-models",
-        "dev-guide/image-prompting",
-        "dev-guide/examples/eliza"
-      ]
+      "pages": ["dev-guide/integration-overview", "dev-guide/supported-models", "dev-guide/image-prompting", "dev-guide/examples/eliza"]
     },
     {
       "group": "REST API",
       "pages": [
         "dev-guide/heurist-mesh/introduction",
+        "dev-guide/heurist-mesh/endpoint",
+        {
+          "group": "Async Endpoints",
+          "pages": ["dev-guide/heurist-mesh/async/endpoint-async", "dev-guide/heurist-mesh/async/endpoint-async-query"]
+        },
         "dev-guide/image-generation/introduction",
         "dev-guide/image-generation/endpoint"
       ]
@@ -131,12 +116,7 @@
     },
     {
       "group": "LLM Gateway",
-      "pages": [
-        "dev-guide/llm-gateway/introduction",
-        "dev-guide/llm-gateway/endpoint",
-        "dev-guide/llm-gateway/llm-tool-calling",
-        "dev-guide/llm-gateway/embedding"
-      ]
+      "pages": ["dev-guide/llm-gateway/introduction", "dev-guide/llm-gateway/endpoint", "dev-guide/llm-gateway/llm-tool-calling", "dev-guide/llm-gateway/embedding"]
     }
   ],
   "footerSocials": {

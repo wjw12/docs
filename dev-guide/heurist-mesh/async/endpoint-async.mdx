@@ -1,0 +1,21 @@
+---
+title: "Create Async Task"
+openapi: POST /mesh_task_create
+---
+
+The task creation endpoint allows you to initiate long-running tasks to be executed in the background.
+
+## Base URL
+
+```bash
+https://sequencer-v2.heurist.xyz
+```
+
+## Authentication
+
+All requests require a Bearer token in the Authorization header.
+
+## Task Flow
+
+1. Create a task using `/mesh_task_create`
+2. Query task status using `/mesh_task_query` until completion
