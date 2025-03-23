@@ -326,6 +326,7 @@
                       "MasaTwitterSearchAgent",
                       "MetaSleuthSolTokenWalletClusterAgent",
                       "PumpFunTokenAgent",
+                      "SolWalletAgent",
                       "ZerionWalletAnalysisAgent",
                       "ZkIgniteAnalystAgent"
                     ]

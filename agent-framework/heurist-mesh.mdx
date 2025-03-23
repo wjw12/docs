@@ -2,12 +2,20 @@
 title: "Heurist Mesh"
 ---
 
-Heurist Mesh is a distributed network of AI agents designed to work together like DeFi smart contracts. Each individual agent in the Mesh specializes in a particular task. All agents collaborate collectively to form an intelligent swarm capable of tackling complex tasks.
+<img
+    src="/images/agent-framework/mesh.jpg" 
+    alt="heurist-mesh"
+    style={{ width: '100%', display: 'block', margin: '0 auto' }}
+  />
+
+Heurist Mesh is an open network of modular and purpose-built AI agents. Each agent is a specialized unit that can process data, generate reports, or engage in conversations, while collectively forming an intelligent swarm to tackle complex tasks. Built on decentralized compute and powered by diverse open-source AI models, Mesh agents can be combined into powerful workflows for cost-efficient and highly flexible solutions.
+
+Mesh agents are designed to be interoperable with all major AI platforms and frameworks. They communicate with simple REST APIs and [Model Context Protocol (MCP)](https://docs.anthropic.com/en/docs/agents-and-tools/mcp).
 
 **Key Features:**
 
 - **Modular and Composable:**  
-  Every agent focuses on a specific task, such as token analysis, social media research, or smart contract security. They are accessible through a REST API, allowing them to be used in any application or by other agents.
+  Every agent focuses on a specific task, such as token analysis, social media research, or smart contract security. They are accessible through a unified interface, allowing them to be used in any application or by other agents.
   
 - **Flexible Deployment:**
   Agents can run on Heurist’s hosted AI-as-a-Service Cloud, on your own servers, or even within secure Trusted Execution Environments (TEEs) if the agent is performing sensitive tasks.
@@ -17,8 +25,24 @@ Heurist Mesh is a distributed network of AI agents designed to work together lik
 
 ---
 
+**What is Model Context Protocol (MCP)?**
+
+MCP is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools.
+
+**Available Now:** We provide a hosted SSE endpoint at https://sequencer-v2.heurist.xyz/mcp/sse. This includes all the tools from the following commonly used agents: CoingeckoTokenInfoAgent, ElfaTwitterIntelligenceAgent, ExaSearchAgent, DexScreenerTokenInfoAgent, ZerionWalletAnalysisAgent. This is a shared server and the performance may be unstable.
+
+Cursor can directly access SSE servers. For Claude Desktop users, we recommend installing [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy) to connect to the SSE server.
+
+**In Development:** Heurist Mesh acts as a customizable and personalized MCP server provider. With an Ethereum wallet, you can select the agents and tools you want to use, and create a dedicated MCP server for your use case. 
+
+---
+
 **For Developers:**
 
-[Start building with Heurist Mesh](https://github.com/heurist-network/heurist-agent-framework/tree/main/mesh).
+- [Heurist Mesh Github](https://github.com/heurist-network/heurist-agent-framework/tree/main/mesh)
+
+- [Start using Heurist Mesh with API](https://docs.heurist.ai/dev-guide/heurist-mesh/endpoint)
+
+- [Access Heurist Mesh MCP](https://github.com/heurist-network/heurist-mesh-mcp-server)
 
 Coming soon: bounties for new agents!
