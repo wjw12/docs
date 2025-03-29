@@ -122,6 +122,12 @@
                     "description": "Maximum time allowed for job completion in seconds",
                     "example": 60,
                     "default": 60
+                  },
+                  "priority": {
+                    "type": "integer",
+                    "description": "Priority of the job",
+                    "example": 1,
+                    "default": 1
                   }
                 },
                 "required": ["job_id", "model_input", "model_id"]
