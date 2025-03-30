@@ -15,6 +15,7 @@ const heurist = new Heurist({
 async function main() {
   const response = await heurist.images.generate({
     model: 'BrainDance',
+    prompt: 'A futuristic cityscape at sunset'
   })
 }
  
@@ -27,9 +28,8 @@ main()
 
 ```javascript
 {
-  "url": "https://heurist-images.s3.us-east-1.amazonaws.com/**********.png",
-  "model": "BrainDance",
-  "prompt": "xxxxxx"
+  'url': 'https://heurist-images.s3.us-east-1.amazonaws.com/**********.png'
+
 }
 ```
 ## Parameters
