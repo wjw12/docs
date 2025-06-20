@@ -238,32 +238,23 @@ paths:
                   default: CoinGeckoTokenInfoAgent
                   enum:
                     - AIXBTProjectInfoAgent
-                    - AaveAgent
-                    - AlloraPricePredictionAgent
                     - ArkhamIntelligenceAgent
                     - BitquerySolanaTokenInfoAgent
                     - CarvOnchainDataAgent
                     - CoinGeckoTokenInfoAgent
                     - CookieProjectInfoAgent
-                    - DeepResearchAgent
                     - DexScreenerTokenInfoAgent
-                    - DuckDuckGoSearchAgent
                     - ElfaTwitterIntelligenceAgent
                     - EtherscanAgent
                     - ExaSearchAgent
                     - FirecrawlSearchAgent
                     - FundingRateAgent
                     - GoplusAnalysisAgent
-                    - MasaTwitterSearchAgent
-                    - MemoryAgent
-                    - MetaSleuthSolTokenWalletClusterAgent
-                    - MindAiKolAgent
                     - MoniTwitterInsightAgent
                     - PondWalletAnalysisAgent
                     - PumpFunTokenAgent
                     - SolWalletAgent
                     - SpaceTimeAgent
-                    - TokenMetricsAgent
                     - TruthSocialAgent
                     - TwitterInfoAgent
                     - UnifaiMeteoraInfoAgent
@@ -291,32 +282,23 @@ paths:
                         tool_arguments:
                           oneOf:
                             - $ref: '#/components/schemas/AIXBTProjectInfoAgent_tool_arguments'
-                            - $ref: '#/components/schemas/AaveAgent_tool_arguments'
-                            - $ref: '#/components/schemas/AlloraPricePredictionAgent_tool_arguments'
                             - $ref: '#/components/schemas/ArkhamIntelligenceAgent_tool_arguments'
                             - $ref: '#/components/schemas/BitquerySolanaTokenInfoAgent_tool_arguments'
                             - $ref: '#/components/schemas/CarvOnchainDataAgent_tool_arguments'
                             - $ref: '#/components/schemas/CoinGeckoTokenInfoAgent_tool_arguments'
                             - $ref: '#/components/schemas/CookieProjectInfoAgent_tool_arguments'
-                            - $ref: '#/components/schemas/DeepResearchAgent_tool_arguments'
                             - $ref: '#/components/schemas/DexScreenerTokenInfoAgent_tool_arguments'
-                            - $ref: '#/components/schemas/DuckDuckGoSearchAgent_tool_arguments'
                             - $ref: '#/components/schemas/ElfaTwitterIntelligenceAgent_tool_arguments'
                             - $ref: '#/components/schemas/EtherscanAgent_tool_arguments'
                             - $ref: '#/components/schemas/ExaSearchAgent_tool_arguments'
                             - $ref: '#/components/schemas/FirecrawlSearchAgent_tool_arguments'
                             - $ref: '#/components/schemas/FundingRateAgent_tool_arguments'
                             - $ref: '#/components/schemas/GoplusAnalysisAgent_tool_arguments'
-                            - $ref: '#/components/schemas/MasaTwitterSearchAgent_tool_arguments'
-                            - $ref: '#/components/schemas/MemoryAgent_tool_arguments'
-                            - $ref: '#/components/schemas/MetaSleuthSolTokenWalletClusterAgent_tool_arguments'
-                            - $ref: '#/components/schemas/MindAiKolAgent_tool_arguments'
                             - $ref: '#/components/schemas/MoniTwitterInsightAgent_tool_arguments'
                             - $ref: '#/components/schemas/PondWalletAnalysisAgent_tool_arguments'
                             - $ref: '#/components/schemas/PumpFunTokenAgent_tool_arguments'
                             - $ref: '#/components/schemas/SolWalletAgent_tool_arguments'
                             - $ref: '#/components/schemas/SpaceTimeAgent_tool_arguments'
-                            - $ref: '#/components/schemas/TokenMetricsAgent_tool_arguments'
                             - $ref: '#/components/schemas/TruthSocialAgent_tool_arguments'
                             - $ref: '#/components/schemas/TwitterInfoAgent_tool_arguments'
                             - $ref: '#/components/schemas/UnifaiMeteoraInfoAgent_tool_arguments'
@@ -368,32 +350,23 @@ paths:
                   default: CoinGeckoTokenInfoAgent
                   enum:
                     - AIXBTProjectInfoAgent
-                    - AaveAgent
-                    - AlloraPricePredictionAgent
                     - ArkhamIntelligenceAgent
                     - BitquerySolanaTokenInfoAgent
                     - CarvOnchainDataAgent
                     - CoinGeckoTokenInfoAgent
                     - CookieProjectInfoAgent
-                    - DeepResearchAgent
                     - DexScreenerTokenInfoAgent
-                    - DuckDuckGoSearchAgent
                     - ElfaTwitterIntelligenceAgent
                     - EtherscanAgent
                     - ExaSearchAgent
                     - FirecrawlSearchAgent
                     - FundingRateAgent
                     - GoplusAnalysisAgent
-                    - MasaTwitterSearchAgent
-                    - MemoryAgent
-                    - MetaSleuthSolTokenWalletClusterAgent
-                    - MindAiKolAgent
                     - MoniTwitterInsightAgent
                     - PondWalletAnalysisAgent
                     - PumpFunTokenAgent
                     - SolWalletAgent
                     - SpaceTimeAgent
-                    - TokenMetricsAgent
                     - TruthSocialAgent
                     - TwitterInfoAgent
                     - UnifaiMeteoraInfoAgent
@@ -425,32 +398,23 @@ paths:
                         tool_arguments:
                           oneOf:
                             - $ref: '#/components/schemas/AIXBTProjectInfoAgent_tool_arguments'
-                            - $ref: '#/components/schemas/AaveAgent_tool_arguments'
-                            - $ref: '#/components/schemas/AlloraPricePredictionAgent_tool_arguments'
                             - $ref: '#/components/schemas/ArkhamIntelligenceAgent_tool_arguments'
                             - $ref: '#/components/schemas/BitquerySolanaTokenInfoAgent_tool_arguments'
                             - $ref: '#/components/schemas/CarvOnchainDataAgent_tool_arguments'
                             - $ref: '#/components/schemas/CoinGeckoTokenInfoAgent_tool_arguments'
                             - $ref: '#/components/schemas/CookieProjectInfoAgent_tool_arguments'
-                            - $ref: '#/components/schemas/DeepResearchAgent_tool_arguments'
                             - $ref: '#/components/schemas/DexScreenerTokenInfoAgent_tool_arguments'
-                            - $ref: '#/components/schemas/DuckDuckGoSearchAgent_tool_arguments'
                             - $ref: '#/components/schemas/ElfaTwitterIntelligenceAgent_tool_arguments'
                             - $ref: '#/components/schemas/EtherscanAgent_tool_arguments'
                             - $ref: '#/components/schemas/ExaSearchAgent_tool_arguments'
                             - $ref: '#/components/schemas/FirecrawlSearchAgent_tool_arguments'
                             - $ref: '#/components/schemas/FundingRateAgent_tool_arguments'
                             - $ref: '#/components/schemas/GoplusAnalysisAgent_tool_arguments'
-                            - $ref: '#/components/schemas/MasaTwitterSearchAgent_tool_arguments'
-                            - $ref: '#/components/schemas/MemoryAgent_tool_arguments'
-                            - $ref: '#/components/schemas/MetaSleuthSolTokenWalletClusterAgent_tool_arguments'
-                            - $ref: '#/components/schemas/MindAiKolAgent_tool_arguments'
                             - $ref: '#/components/schemas/MoniTwitterInsightAgent_tool_arguments'
                             - $ref: '#/components/schemas/PondWalletAnalysisAgent_tool_arguments'
                             - $ref: '#/components/schemas/PumpFunTokenAgent_tool_arguments'
                             - $ref: '#/components/schemas/SolWalletAgent_tool_arguments'
                             - $ref: '#/components/schemas/SpaceTimeAgent_tool_arguments'
-                            - $ref: '#/components/schemas/TokenMetricsAgent_tool_arguments'
                             - $ref: '#/components/schemas/TruthSocialAgent_tool_arguments'
                             - $ref: '#/components/schemas/TwitterInfoAgent_tool_arguments'
                             - $ref: '#/components/schemas/UnifaiMeteoraInfoAgent_tool_arguments'
@@ -616,30 +580,6 @@ components:
         chain:
           type: string
           description: Filter projects by blockchain (e.g., 'ethereum', 'solana', 'base'). Returns projects with tokens deployed on the specified chain, useful for ecosystem-specific research.
-    AaveAgent_tool_arguments:
-      type: object
-      properties:
-        chain_id:
-          type: integer
-          description: Blockchain network ID (137=Polygon, 1=Ethereum, 43114=Avalanche C-Chain, 42161=Arbitrum One.)
-          enum: [1, 137, 43114, 42161]
-        block_identifier:
-          type: string
-          description: Optional block number or hash for historical data
-        asset_filter:
-          type: string
-          description: Optional filter to get data for a specific asset symbol (e.g., 'USDC')
-    AlloraPricePredictionAgent_tool_arguments:
-      type: object
-      properties:
-        token:
-          type: string
-          description: The cryptocurrency symbol (ETH or BTC)
-          enum: ["ETH", "BTC"]
-        timeframe:
-          type: string
-          description: Time period for prediction
-          enum: ["5m", "8h"]
     ArkhamIntelligenceAgent_tool_arguments:
       type: object
       properties:
@@ -770,24 +710,6 @@ components:
         contract_address:
           type: string
           description: Token contract address.
-    DeepResearchAgent_tool_arguments:
-      type: object
-      properties:
-        query:
-          type: string
-          description: Research query or topic.
-        depth:
-          type: integer # Corrected from number
-          description: Research depth (1-3).
-          default: 2
-        breadth:
-          type: integer # Corrected from number
-          description: Search breadth per level (1-5).
-          default: 3
-        concurrency:
-          type: integer # Corrected from number
-          description: Number of concurrent searches (1-9).
-          default: 9
     DexScreenerTokenInfoAgent_tool_arguments:
       type: object
       properties:
@@ -803,18 +725,6 @@ components:
         token_address:
           type: string
           description: The token contract address to look up all pairs for.
-    DuckDuckGoSearchAgent_tool_arguments:
-      type: object
-      properties:
-        search_term:
-          type: string
-          description: The search term to look up.
-        max_results:
-          type: integer # Corrected from number
-          description: "Maximum number of results to return (default: 5)."
-          minimum: 1
-          maximum: 10
-          # default not specified in metadata for max_results, but description implies 5
     ElfaTwitterIntelligenceAgent_tool_arguments:
       type: object
       properties:
@@ -902,77 +812,6 @@ components:
           type: string # chain_id is string in metadata (e.g. "solana", "1")
           description: The blockchain chain ID or 'solana' for Solana tokens. Supported chains Ethereum (1), Optimism (10), Cronos (25), BSC (56), Gnosis (100), HECO (128), Polygon (137), Fantom (250), KCC (321), zkSync Era (324), ETHW (10001), FON (201022), Arbitrum (42161), Avalanche (43114), Linea Mainnet (59144), Base (8453), Tron (tron), Scroll (534352), opBNB (204), Mantle (5000), ZKFair (42766), Blast (81457), Manta Pacific (169), Berachain Artio Testnet (80085), Merlin (4200), Bitlayer Mainnet (200901), zkLink Nova (810180), X Layer Mainnet (196), Solana (solana).
           default: "1" # Default is 1 (Ethereum) as per metadata
-    MasaTwitterSearchAgent_tool_arguments:
-      type: object
-      properties:
-        search_term:
-          type: string
-          description: The search term to find tweets.
-        max_results:
-          type: integer # Corrected from number
-          description: "Maximum number of results to return (default: 25)."
-          # default not specified in metadata, but description implies 25
-    MemoryAgent_tool_arguments:
-      type: object
-      properties:
-        content:
-          type: string
-          description: The conversation content to store.
-        metadata: # Type is object, not dict
-          type: object
-          description: Optional metadata about the conversation (e.g., platform, topic).
-        limit:
-          type: integer
-          description: "Maximum number of conversations to retrieve (default: 5)."
-        filter: # Type is object, not dict
-          type: object
-          description: Optional filters to apply (e.g., platform, date range, topic).
-    MetaSleuthSolTokenWalletClusterAgent_tool_arguments:
-      type: object
-      properties:
-        address:
-          type: string
-          description: The Solana token address to analyze.
-        page:
-          type: integer
-          description: Page number for paginated results.
-          default: 1
-        page_size:
-          type: integer
-          description: Number of clusters or holders to return per page.
-          default: 20
-        query_id:
-          type: string
-          description: Optional query ID for historical analysis.
-          default: ""
-        cluster_uuid:
-          type: string
-          description: The unique identifier of the cluster.
-    MindAiKolAgent_tool_arguments:
-      type: object
-      properties:
-        period:
-          type: integer
-          description: "Time period in hours to look back (default: 168 hours/7 days)."
-          default: 168
-        token_category:
-          type: string
-          description: Optional category of tokens to consider 'top100', 'top500', or 'lowRank'.
-          enum: ["top100", "top500", "lowRank"]
-        kol_name:
-          type: string
-          description: Name of the KOL to filter by (e.g., '@agentcookiefun').
-        token_symbol:
-          type: string
-          description: Symbol of the token to filter by or get statistics for (e.g., 'BTC', 'ETH').
-        tokens_amount:
-          type: integer
-          description: Number of top tokens to return (1-10).
-          default: 5
-        kols_amount:
-          type: integer
-          description: Number of KOLs to return per token (3-10).
-          default: 3
     MoniTwitterInsightAgent_tool_arguments:
       type: object
       properties:
@@ -1037,31 +876,6 @@ components:
         nl_query:
           type: string
           description: Natural language description of the blockchain data query.
-    TokenMetricsAgent_tool_arguments:
-      type: object
-      properties:
-        limit:
-          type: integer # Corrected from number
-          description: Maximum number of results to return.
-          default: 10 # Default for get_sentiments
-        page:
-          type: integer # Corrected from number
-          description: Page number for pagination.
-          default: 0 # Default for get_sentiments
-        token_ids:
-          type: string
-          description: Comma-separated list of token IDs, limited to two tokens (e.g., '3375,3306' for BTC,ETH).
-          default: "3375,3306"
-        symbols: # Parameter name from metadata
-          type: string
-          description: Comma-separated list of token symbols, limited to two tokens (e.g., 'BTC,ETH').
-          default: "BTC,ETH"
-        token_name:
-          type: string
-          description: Name of the token to search for (e.g., 'bitcoin').
-        token_symbol: # Parameter name from metadata
-          type: string
-          description: Symbol of the token to search for (e.g., 'BTC').
     TruthSocialAgent_tool_arguments:
       type: object
       properties:
