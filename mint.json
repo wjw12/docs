@@ -61,14 +61,9 @@
     {
       "group": "Overview",
       "pages": [
-        "protocol-overview/litepaper",
         "protocol-overview/tokenomics",
         "protocol-overview/credits",
         "protocol-overview/stake",
-        {
-          "group": "Mining",
-          "pages": ["protocol-overview/mining", "protocol-overview/mining/season-1", "protocol-overview/mining/season-2"]
-        },
         "protocol-overview/brand-assets",
         "protocol-overview/contract-addresses"
       ]
@@ -78,12 +73,8 @@
       "pages": ["agent-framework/social-agents", "agent-framework/heurist-mesh"]
     },
     {
-      "group": "Ecosystem",
-      "pages": ["ecosystem/imagine", "ecosystem/imaginaries-nft"]
-    },
-    {
-      "group": "Guides",
-      "pages": ["guides/ai-101"]
+      "group": "Ecosystem Apps",
+      "pages": ["ecosystem/imagine"]
     },
     {
       "group": "Developer Reference",
