@@ -13,13 +13,15 @@ You can use the following model name as `model_id` in Heurist API/SDK.
   * `deepseek/deepseek-r1`: DeepSeek R1 is a groundbreaking open-source AI model that achieves performance comparable to OpenAI's o1 model across math, code, and reasoning tasks, supporting self-verification and reflection, while being more cost-efficient than its competitors.
   * `deepseek/deepseek-v3`: DeepSeek V3 0324 version is a powerful Mixture-of-Experts (MoE) language model with 685B total parameters, activating 37B parameters for each token. It demonstrates notable improvements over its predecessor, DeepSeek-V3, and achieves results comparable to Claude Sonnet 3.7.
   * `deepseek/deepseek-r1-distill-llama-70b`: A distilled version of DeepSeek R1, using Llama 3 70B as the base model. It achieves results comparable to DeepSeek R1 but much more cost-efficient and faster.
-  * `NaniDAO/deepseek-r1-qwen-2.5-32B-ablated`: A distilled version of DeepSeek R1, with using Qwen 2.5 32B as the base model. It uses ablation technique to remove refusal mechanism to make the model always generate responses. **Uncensored**.
+  * `openai/gpt-oss-120b`: Open-weight 117B-parameter Mixture-of-Experts language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. Activates 5.1B parameters per forward pass and is optimized to run on a single H100 GPU with native MXFP4 quantization. Supports configurable reasoning depth, full chain-of-thought access, and native tool use including function calling and structured outputs.
+  * `openai/gpt-oss-20b`: Open-weight 21B parameter model from OpenAI under Apache 2.0 license. Uses Mixture-of-Experts architecture with 3.6B active parameters per forward pass, optimized for lower-latency inference and deployability on consumer or single-GPU hardware. Supports reasoning level configuration, fine-tuning, and agentic capabilities including function calling and tool use.
   * `mistralai/mixtral-8x22b-instruct`: A Sparse Mixture-of-Experts model featuring 8 experts and 22 billion parameters, optimized for instruction-following with strong performance in reasoning and multilingual capabilities.
   * `mistralai/mixtral-8x7b-instruct`: A compact version of the Mixtral family, designed for efficient instruction-based interactions while maintaining a balance between performance and cost.
   * `mistralai/mistral-7b-instruct`: Excel in generating fast responses and highly cost-efficient.
   * `meta-llama/llama-3.3-70b-instruct`: The latest Llama 3 model, outperforming many of the available open source and closed chat models on common industry benchmarks.
   * `nvidia/llama-3.1-nemotron-70b-instruct`: specialized version of the Llama model tailored by NVIDIA for complex instruction-following tasks, delivering high-quality, human-like responses across a variety of applications while leveraging advanced NVIDIA AI technologies for optimal performance and scalability.
   * `qwen/qwen-2.5-coder-32b-instruct`: State-of-the-art open-source code model, matching the coding capabilities of GPT-4o.
+  * `NaniDAO/deepseek-r1-qwen-2.5-32B-ablated`: A distilled version of DeepSeek R1, with using Qwen 2.5 32B as the base model. It uses ablation technique to remove refusal mechanism to make the model always generate responses. **Uncensored**.
   * `hermes-3-llama3.1-8b`: Flagship Hermes LLM trained by Nous Research, with advanced agentic capabilities, enhanced roleplaying, reasoning, multi-turn conversation, long context coherence and agentic abilities. **Uncensored**. **Supports tool calling**
   * `qwen/qwen-2.5-coder-32b-instruct`: Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen)
   * `asi1-mini`: ASI1-mini is the first Web3-native LLM, specifically built and optimized for supporting complex agentic workflows. Developed by Fetch.ai, it features adaptive reasoning and context-aware decision-making.
@@ -33,9 +35,6 @@ The models marked as **Uncensored** are finetuned with specific datasets to elim
   * `HeuristLogo`: Flux LoRA that can generate the logo of Heurist. Trigger word: `Heuristai logo` or `hexagonal logo`.
   * `FLUX.1-dev`: State-of-the-art open source image generation model that excels at a variety of image styles.
 
-  * `PepeXL`: SDXL LoRA that can generate the meme frog, Pepe. Trigger word: `Pepe`. Recommended words: `pepe_frog, meme, web comic` and add `cartoon` or `3d render`
-  * `Zeek`: SDXL LoRA for ZKsync's mascot cat, Zeek. Trigger word: `zeek`. We recommend using `zeek wearing ...` or `zeek disguised as ...`
-
   * `Aurora`: SD1.5 checkpoint for anime girls.
 
   * `AnimagineXL`: SDXL checkpoint for anime images. It can generate characters from well-known anime series.
@@ -44,23 +43,27 @@ The models marked as **Uncensored** are finetuned with specific datasets to elim
 
   * `BrainDance`: SD1.5 checkpoint for cartoon, anime and watercolor styles.
 
-  * `BlazingDrive`: SD1.5 checkpoint for anime characters and scenes.
-
   * `YamersCartoonArcadia`: SD1.5 checkpoint for stylized 2D cartoon.
 
-  * `ArchitectureRealMix`: SD1.5 checkpoint for architectural design, landscape design, urban design, and interior design.
-
   * `ArthemyComics`: SD1.5 checkpoint for fantasy cartoon images.
-
-  * `ArthemyReal`: SD1.5 checkpoint for fantasy-style and realistic-looking images.
-
-  * `DreamShaperXL`: SDXL checkpoint that aims at doing everything well, including photos, art, anime, and manga styles.
 
   * `AAMXLAnimeMix`: SDXL checkpoint for anime art and hentai.
 
   * `SDXLUnstableDiffusersV11`: SDXL checkpoint that enhances SDXL capabilities in creating vibrant arts, designs and photo-realistic images.
 
   * `SDXL`: General-purpose image generation model developed by Stability AI.
+
+### Image Editing Models
+
+  * `FLUX.1-kontext-pro`: Advanced AI model for intelligent image editing with context-aware capabilities. Excels at precise modifications, character consistency, and iterative editing workflows while maintaining visual quality across multiple edits.
+  
+  * `FLUX.1-kontext-max`: Premium image editing model offering maximum performance with enhanced prompt adherence and superior typography generation. Designed for professional-grade editing tasks requiring the highest quality output.
+
+### Interactive Web Interface
+
+For hands-on experimentation with image and video models, visit [Heurist Imagine](https://imagine.heurist.ai) where you can test and use our supported models directly in your browser.
+
+For testing and experimenting with language models, visit [Pondera](https://pondera.heurist.ai) - a free interactive chatbot app where you can try out our LLMs with various configurations and settings.
 
 ### Embedding Models
   * `BAAI/bge-large-en-v1.5`: A large-scale multilingual embedding model. It converts text into a 1024 dimensional vector representation. The max input length is 512 tokens.
