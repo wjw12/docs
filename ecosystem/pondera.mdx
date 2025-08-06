@@ -1,0 +1,51 @@
+---
+title: "Pondera"
+description: "Free AI chat assistant with access to cutting-edge language models and document analysis capabilities."
+---
+
+## Overview
+
+Pondera provides free access to all available LLMs on the Heurist platform. Whether you need help with coding, research, writing, or analysis, Pondera delivers intelligent responses powered by state-of-the-art language models. Upload documents, analyze PDFs, and get instant AI assistance without any subscription fees.
+
+## Direct Model Access
+
+Access specific models directly through URL parameters. Try these popular models:
+
+- **OpenAI GPT OSS 20B**: [pondera.heurist.ai/?model=openai/gpt-oss-20b](https://pondera.heurist.ai/?model=openai/gpt-oss-20b)
+- **DeepSeek V3**: [pondera.heurist.ai/?model=deepseek/deepseek-v3](https://pondera.heurist.ai/?model=deepseek/deepseek-v3)
+- **Llama 3.1 Nemotron 70B**: [pondera.heurist.ai/?model=nvidia/llama-3.1-nemotron-70b-instruct](https://pondera.heurist.ai/?model=nvidia/llama-3.1-nemotron-70b-instruct)
+- **DeepSeek R1**: [pondera.heurist.ai/?model=deepseek/deepseek-r1](https://pondera.heurist.ai/?model=deepseek/deepseek-r1)
+- **Qwen 2.5 Coder 32B**: [pondera.heurist.ai/?model=qwen/qwen-2.5-coder-32b-instruct](https://pondera.heurist.ai/?model=qwen/qwen-2.5-coder-32b-instruct)
+
+See our complete [model list](../dev-guide/supported-models#text-generation-models) for all available options.
+
+## Key Features
+
+### Multi-Model Selection
+Choose from over 20 language models including Llama, Mistral, Qwen, and DeepSeek families. Switch between models seamlessly within the same conversation to compare responses or leverage different capabilities. Each model has unique strengths - coding models excel at programming tasks while general models provide balanced performance across all domains.
+
+### Document Analysis
+Upload and analyze PDFs, text files, and images directly in your conversations. Extract insights from research papers, analyze code repositories, or discuss visual content with vision-capable models. The system maintains context across multiple documents, enabling comprehensive analysis and cross-referencing.
+
+### Advanced Capabilities
+Pondera supports streaming responses for real-time output, maintains full conversation history for contextual understanding, and provides automatic syntax highlighting for code snippets. Export your conversations for future reference or share insights with your team.
+
+## Use Cases
+
+Pondera excels at research and analysis tasks, from summarizing academic papers to extracting key insights from lengthy reports. For developers, it provides code debugging, generation of boilerplate code, and conversion between programming languages. Writers use Pondera for creative content generation, editing, and brainstorming. Students and educators leverage it for explaining complex concepts, creating study guides, and personalized tutoring.
+
+## Getting Started
+
+Visit [pondera.heurist.ai](https://pondera.heurist.ai) to start chatting immediately. Select your preferred language model from the dropdown menu or use the direct model links above. Upload files by clicking the attachment button or dragging them into the chat interface.
+
+## Model Selection Guide
+
+Different models excel at different tasks. For general purpose conversations, Llama 3.3 70B and Qwen 2.5 72B provide excellent balanced performance. DeepSeek models and Qwen Coder are optimized for programming tasks. Mistral models excel at creative writing and storytelling.
+
+## API Access
+
+All Pondera models are available via our API for programmatic access. The [LLM Gateway documentation](../dev-guide/llm-gateway/introduction) provides complete integration details including streaming responses, function calling capabilities, embeddings generation, and batch processing for multiple queries.
+
+## Privacy & Pricing
+
+Conversations are processed securely through Heurist's infrastructure with no permanent storage of uploaded files after processing. You can clear conversation history at any time. The Pondera web interface is completely free for all users. For API access, refer to our [pricing documentation](../protocol-overview/credits) for token-based pricing details.

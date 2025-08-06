@@ -74,7 +74,7 @@
     },
     {
       "group": "Ecosystem Apps",
-      "pages": ["ecosystem/imagine"]
+      "pages": ["ecosystem/imagine", "ecosystem/pondera", "ecosystem/heurist-deep-research"]
     },
     {
       "group": "Developer Reference",
