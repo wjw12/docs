@@ -8,6 +8,7 @@ description: "Explore a wide range of AI models. We support models for natural l
 You can use the following model name as `model_id` in Heurist API/SDK.
 
 For interactive testing and API exploration, visit our [Chat Completion Endpoint](https://docs.heurist.ai/dev-guide/llm-gateway/endpoint) documentation which includes a built-in API testing interface.
+To estimate usage costs in credits, see the LLM Credits Table below.
 
 ### Large Language Models (LLMs)
   * `deepseek/deepseek-r1`: DeepSeek R1 is a groundbreaking open-source AI model that achieves performance comparable to OpenAI's o1 model across math, code, and reasoning tasks, supporting self-verification and reflection, while being more cost-efficient than its competitors.
@@ -15,16 +16,43 @@ For interactive testing and API exploration, visit our [Chat Completion Endpoint
   * `deepseek/deepseek-r1-distill-llama-70b`: A distilled version of DeepSeek R1, using Llama 3 70B as the base model. It achieves results comparable to DeepSeek R1 but much more cost-efficient and faster.
   * `openai/gpt-oss-120b`: Open-weight 117B-parameter Mixture-of-Experts language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. Activates 5.1B parameters per forward pass and is optimized to run on a single H100 GPU with native MXFP4 quantization. Supports configurable reasoning depth, full chain-of-thought access, and native tool use including function calling and structured outputs.
   * `openai/gpt-oss-20b`: Open-weight 21B parameter model from OpenAI under Apache 2.0 license. Uses Mixture-of-Experts architecture with 3.6B active parameters per forward pass, optimized for lower-latency inference and deployability on consumer or single-GPU hardware. Supports reasoning level configuration, fine-tuning, and agentic capabilities including function calling and tool use.
-  * `mistralai/mixtral-8x22b-instruct`: A Sparse Mixture-of-Experts model featuring 8 experts and 22 billion parameters, optimized for instruction-following with strong performance in reasoning and multilingual capabilities.
-  * `mistralai/mixtral-8x7b-instruct`: A compact version of the Mixtral family, designed for efficient instruction-based interactions while maintaining a balance between performance and cost.
-  * `mistralai/mistral-7b-instruct`: Excel in generating fast responses and highly cost-efficient.
+  
   * `meta-llama/llama-3.3-70b-instruct`: The latest Llama 3 model, outperforming many of the available open source and closed chat models on common industry benchmarks.
   * `nvidia/llama-3.1-nemotron-70b-instruct`: specialized version of the Llama model tailored by NVIDIA for complex instruction-following tasks, delivering high-quality, human-like responses across a variety of applications while leveraging advanced NVIDIA AI technologies for optimal performance and scalability.
-  * `qwen/qwen-2.5-coder-32b-instruct`: State-of-the-art open-source code model, matching the coding capabilities of GPT-4o.
-  * `NaniDAO/deepseek-r1-qwen-2.5-32B-ablated`: A distilled version of DeepSeek R1, with using Qwen 2.5 32B as the base model. It uses ablation technique to remove refusal mechanism to make the model always generate responses. **Uncensored**.
-  * `hermes-3-llama3.1-8b`: Flagship Hermes LLM trained by Nous Research, with advanced agentic capabilities, enhanced roleplaying, reasoning, multi-turn conversation, long context coherence and agentic abilities. **Uncensored**. **Supports tool calling**
-  * `qwen/qwen-2.5-coder-32b-instruct`: Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen)
+  * `NousResearch/Hermes-3-Llama-3.1-8B`: Flagship Hermes LLM trained by Nous Research, with advanced agentic capabilities, enhanced roleplaying, reasoning, multi-turn conversation, long context coherence and agentic abilities. **Uncensored**
   * `asi1-mini`: ASI1-mini is the first Web3-native LLM, specifically built and optimized for supporting complex agentic workflows. Developed by Fetch.ai, it features adaptive reasoning and context-aware decision-making.
+  * `mistralai/mistral-small-24b-instruct`: 24B instruction-tuned Mistral Small 3 model optimized for low-latency agentic use with native function calling and JSON outputs. Strong reasoning for its size, multilingual, 32k context, Apache-2.0 licensed.
+  * `google/gemini-2.5-flash`: Hybrid reasoning model with controllable "thinking budgets" that balances speed, cost, and quality. Natively multimodal (text, images, audio, video) with a 1M-token context window—ideal for fast, production chat, summarization, and extraction.
+  * `google/gemini-2.5-pro`: Most capable Gemini for complex tasks and coding. Natively multimodal with long context and advanced reasoning; excels at video understanding, planning, and end-to-end code generation for interactive apps.
+  * `anthropic/claude-sonnet-4`: High-performance, hybrid reasoning model with strong coding and agentic tool use. 200k context (1M beta), controllable extended thinking, and reliable long-form generation for production assistants.
+  * `anthropic/claude-3.5-haiku`: Fast, cost-efficient Claude model for high-volume workloads. Low-latency multimodal understanding with solid instruction-following—well-suited to routing, extraction, and lightweight chat.
+  * `openai/gpt-5`: Next-generation unified model combining adaptive reasoning with native multimodality and long context. Designed for agentic workflows with built-in tool use, structured outputs, and persistent context/memory.
+  * `openai/gpt-5-mini`: Compact GPT‑5 variant balancing quality and latency for production. Multimodal + reasoning capabilities at lower cost—good default for assistants, batch processing, and RAG orchestration.
+  * `openai/gpt-5-nano`: Ultra-low-latency GPT‑5 tier for on-device or cost-sensitive tasks (classification, autocomplete, routing). Optimized for fast responses and structured outputs with minimal overhead.
+
+### LLM Credits Table
+
+Pricing is in credits per 1M tokens.
+
+| Model | Input (per 1M tokens) | Output (per 1M tokens) |
+|-------|------------------------|-------------------------|
+| nvidia/llama-3.1-nemotron-70b-instruct | 15 | 30 |
+| meta-llama/llama-3.3-70b-instruct | 15 | 30 |
+| NousResearch/Hermes-3-Llama-3.1-8B | 10 | 10 |
+| deepseek/deepseek-r1 | 300 | 300 |
+| deepseek/deepseek-v3 | 100 | 100 |
+| deepseek/deepseek-r1-distill-llama-70b | 80 | 80 |
+| asi1-mini | 100 | 100 |
+| google/gemini-2.5-flash | 30 | 250 |
+| google/gemini-2.5-pro | 125 | 1000 |
+| anthropic/claude-sonnet-4 | 300 | 1500 |
+| anthropic/claude-3.5-haiku | 100 | 400 |
+| openai/gpt-oss-20b | 10 | 50 |
+| openai/gpt-oss-120b | 30 | 100 |
+| openai/gpt-5 | 150 | 1200 |
+| openai/gpt-5-mini | 25 | 200 |
+| openai/gpt-5-nano | 5 | 40 |
+| mistralai/mistral-small-24b-instruct | 30 | 30 |
 
 ### Note on uncensored models:
 
