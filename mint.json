@@ -20,12 +20,6 @@
       "disableProxy": true
     }
   },
-  "tabs": [
-    {
-      "name": "Developer Guide",
-      "url": "dev-guide"
-    }
-  ],
   "anchors": [
     {
       "name": "X",
@@ -56,7 +50,7 @@
   "navigation": [
     {
       "group": "Getting Started",
-      "pages": ["introduction"]
+      "pages": ["introduction", "integration-overview"]
     },
     {
       "group": "Overview",
@@ -69,45 +63,33 @@
       ]
     },
     {
-      "group": "Agent Framework",
-      "pages": ["agent-framework/social-agents", "agent-framework/heurist-mesh"]
+      "group": "Heurist Mesh",
+      "pages": [
+        "heurist-mesh/overview",
+        "heurist-mesh/rest-api",
+        "heurist-mesh/api-playground"
+      ]
+    },
+    {
+      "group": "X402 Products",
+      "pages": [
+        "x402-products/facilitator",
+        "x402-products/vending-machine"
+      ]
     },
     {
       "group": "Ecosystem Apps",
       "pages": ["ecosystem/imagine", "ecosystem/pondera", "ecosystem/heurist-deep-research"]
     },
     {
-      "group": "Developer Reference",
-      "pages": ["dev-guide/integration-overview", "dev-guide/supported-models", "dev-guide/image-prompting", "dev-guide/examples/eliza"]
-    },
-    {
-      "group": "REST API",
-      "pages": [
-        "dev-guide/heurist-mesh/introduction",
-        "dev-guide/heurist-mesh/endpoint",
-        {
-          "group": "Async Endpoints",
-          "pages": ["dev-guide/heurist-mesh/async/endpoint-async", "dev-guide/heurist-mesh/async/endpoint-async-query"]
-        },
-        "dev-guide/image-generation/introduction",
-        "dev-guide/image-generation/endpoint"
-      ]
-    },
-    {
-      "group": "Heurist SDK",
-      "pages": [
-        "dev-guide/heurist-sdk/introduction",
-        "dev-guide/heurist-sdk/getting-started",
-        "dev-guide/heurist-sdk/basic-image-generation",
-        "dev-guide/heurist-sdk/smartgen",
-        "dev-guide/heurist-sdk/comfyui-workflow",
-        "dev-guide/heurist-sdk/comfyui-fluxlora",
-        "dev-guide/heurist-sdk/comfyui-txt2vid"
-      ]
-    },
-    {
       "group": "LLM Gateway",
-      "pages": ["dev-guide/llm-gateway/introduction", "dev-guide/llm-gateway/endpoint", "dev-guide/llm-gateway/llm-tool-calling", "dev-guide/llm-gateway/embedding"]
+      "pages": [
+        "llm-gateway/introduction",
+        "llm-gateway/supported-models",
+        "llm-gateway/endpoint",
+        "llm-gateway/llm-tool-calling",
+        "llm-gateway/embedding"
+      ]
     }
   ],
   "footerSocials": {

@@ -1,0 +1,75 @@
+---
+title: "X402 Facilitator"
+description: "Scale your x402 payments with institutional-grade compliance and reliability"
+---
+
+## Scale Your x402 Payments
+
+The Heurist x402 Facilitator enables you to monetize your API or service instantly with blockchain payments. Built for developers who want to accept x402 payments without managing blockchain infrastructure.
+
+## One-Line Integration
+
+Monetize your API in minutes. Here's all it takes:
+
+```javascript
+import express from "express";
+import { paymentMiddleware } from "x402-express";
+
+app.use(payTo, routes, {
+  url: "https://facilitator.heurist.xyz"
+})
+```
+
+That's it. Your API now accepts x402 payments from anywhere in the world.
+
+## Enterprise-Grade Features
+
+- **High-Frequency Transaction Management** - Scale with confidence. Our transaction management system is built for high-frequency requests, handling thousands of payment verifications and settlements per second.
+
+- **Multi-Chain Support** - Address a global audience. One endpoint, multiple blockchain ecosystems. Support for Base, with BNB Chain and X Layer coming soon.
+
+- **Regulatory Compliance** - Meet regulatory requirements automatically. Our facilitator screens and blocks transactions from OFAC-sanctioned addresses, ensuring your service remains compliant without additional overhead.
+
+- **Zero-Friction Onboarding** - Eliminate onboarding friction. Integrate in seconds with no API key needed. Payment itself acts as authentication.
+
+- **Real-Time Observability** - Monitor every transaction in real-time. Track payment verifications, settlement status, and revenue metrics through our dashboard.
+
+- **Automatic Token Conversion (Coming Soon)** - Accrue value without intervention. Automatically convert USDC revenue into your native project token on every settlement.
+
+## How It Works
+
+The facilitator handles two critical operations:
+
+**Payment Verification**
+When a client attempts to access your paid resource, the facilitator cryptographically verifies their payment signature in milliseconds. This ensures the payment is valid before you deliver the resource.
+
+**Payment Settlement**
+After verification, the facilitator submits the transaction to the blockchain, handling gas fees and confirmation. Your wallet receives the funds automatically.
+
+## Why Use a Facilitator?
+
+Without a facilitator, you'd need to:
+- Run your own blockchain node
+- Manage private keys for settlements
+- Implement complex payment verification logic
+- Handle gas fee management
+- Monitor transaction confirmations
+- Maintain OFAC compliance systems
+
+The Heurist Facilitator handles all of this for you.
+
+## Getting Started
+
+1. Install the x402 middleware for your framework (Express, FastAPI, etc.)
+2. Point to `https://facilitator.heurist.xyz`
+3. Define your payment requirements
+4. Start accepting payments
+
+Visit [x402.org](https://x402.org) for complete integration documentation and examples.
+
+## Supported Networks
+
+- **Base** (Mainnet)
+- **Base Sepolia** (Testnet)
+- **BNB Chain** (Coming Soon)
+- **X Layer** (Coming Soon)
