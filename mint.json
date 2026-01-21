@@ -79,7 +79,7 @@
     },
     {
       "group": "Ecosystem Apps",
-      "pages": ["ecosystem/imagine", "ecosystem/pondera", "ecosystem/heurist-deep-research"]
+      "pages": ["ecosystem/ask-heurist", "ecosystem/imagine"]
     },
     {
       "group": "LLM Gateway",
