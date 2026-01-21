@@ -219,7 +219,7 @@ paths:
   /mesh_request:
     post:
       servers:
-        - url: https://sequencer-v2.heurist.xyz
+        - url: https://mesh.heurist.xyz
       description: Make a synchronous request to an AI agent.
       security:
         - bearerAuth: []
@@ -330,7 +330,7 @@ paths:
   /mesh_task_create:
     post:
       servers:
-        - url: https://sequencer-v2.heurist.xyz
+        - url: https://mesh.heurist.xyz
       description: Create an asynchronous task.
       security:
         - bearerAuth: []
@@ -447,7 +447,7 @@ paths:
   /mesh_task_query:
     post:
       servers:
-        - url: https://sequencer-v2.heurist.xyz
+        - url: https://mesh.heurist.xyz
       description: Query the status of an asynchronous task.
       security:
         - bearerAuth: []
