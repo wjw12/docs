@@ -50,7 +50,7 @@
   "navigation": [
     {
       "group": "Getting Started",
-      "pages": ["introduction", "integration-overview"]
+      "pages": ["introduction", "ask-heurist"]
     },
     {
       "group": "Overview",
@@ -76,10 +76,6 @@
         "x402-products/facilitator",
         "x402-products/vending-machine"
       ]
-    },
-    {
-      "group": "Ecosystem Apps",
-      "pages": ["ecosystem/ask-heurist", "ecosystem/imagine"]
     },
     {
       "group": "LLM Gateway",
