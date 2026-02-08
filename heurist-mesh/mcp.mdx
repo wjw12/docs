@@ -1,0 +1,111 @@
+---
+title: "MCP"
+---
+
+[MCP](https://modelcontextprotocol.io/) (Model Context Protocol) is an open standard for connecting AI applications to external tools and data sources. Heurist Mesh agents are accessible as MCP servers, providing a standardized way for AI apps to use crypto intelligence tools.
+
+## Authentication
+
+All MCP endpoints require a Heurist API key. Get one at [heurist.ai/credits](https://heurist.ai/credits).
+
+## Per-Agent MCP Server
+
+Every agent has a dedicated MCP endpoint:
+
+```
+https://mesh.heurist.xyz/mcp/agents/<AgentName>/
+```
+
+### Configuration
+
+```json
+{
+  "mcpServers": {
+    "heurist-agent": {
+      "url": "https://mesh.heurist.xyz/mcp/agents/TokenResolverAgent/",
+      "headers": {
+        "X-HEURIST-API-KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+You can add multiple agents by adding more entries under `mcpServers`. See [mesh.heurist.ai/metadata.json](https://mesh.heurist.ai/metadata.json) for the full list of agent names.
+
+## Multi-Agent MCP Server
+
+A curated set of recommended agents is available at a single MCP endpoint:
+
+```
+https://mesh.heurist.xyz/mcp/
+```
+
+### Configuration
+
+```json
+{
+  "mcpServers": {
+    "heurist": {
+      "url": "https://mesh.heurist.xyz/mcp/",
+      "headers": {
+        "X-HEURIST-API-KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### Default Agents
+
+| Agent | Description |
+|-------|-------------|
+| **TokenResolverAgent** | Find tokens by address/symbol/name, return normalized profiles and top DEX pools |
+| **TrendingTokenAgent** | Aggregates trending tokens from multiple sources (GMGN, CoinGecko, Pump.fun, Dexscreener, Zora, Twitter) |
+| **TwitterIntelligenceAgent** | Twitter/X timeline, tweet detail, and smart search |
+| **ExaSearchDigestAgent** | Web search with concise LLM summarization |
+| **FundingRateAgent** | Binance funding rates, open interest, and spot-futures opportunities |
+| **AIXBTProjectInfoAgent** | Trending project info, fundamental analysis, and market summary |
+| **ZerionWalletAnalysisAgent** | EVM wallet token and NFT holdings analysis |
+
+### Default Tools
+
+| Tool | Description |
+|------|-------------|
+| `token_search` | Find tokens by address, symbol, name, or CoinGecko ID |
+| `token_profile` | Get comprehensive token profile with market data, socials, and top pools |
+| `get_trending_tokens` | Aggregated trending tokens across all chains and social media |
+| `get_market_summary` | AI-generated market summary across all trending sources |
+| `twitter_search` | Smart Twitter search for crypto topics |
+| `user_timeline` | Get recent tweets from a Twitter user |
+| `tweet_detail` | Get detailed info about a specific tweet |
+| `exa_web_search` | Web search with AI summarization |
+| `exa_scrape_url` | Scrape and summarize webpage content |
+| `get_all_funding_rates` | Get funding rates for all Binance perpetual contracts |
+| `get_symbol_oi_and_funding` | Get open interest and funding for a specific symbol |
+| `find_spot_futures_opportunities` | Find arbitrage opportunities between spot and futures |
+| `search_projects` | Search trending projects with fundamental analysis |
+| `fetch_wallet_tokens` | Get EVM wallet token holdings |
+| `fetch_wallet_nfts` | Get EVM wallet NFT holdings |
+
+## Custom MCP Server
+
+Heurist Mesh has 30+ agents. To customize which agents are included in your MCP server:
+
+1. Visit [mesh.heurist.ai/console/mcp-builder](https://mesh.heurist.ai/console/mcp-builder)
+2. Select the agents you need
+3. Get a dedicated SSE URL
+4. Use it in your MCP config:
+
+```json
+{
+  "mcpServers": {
+    "heurist-custom": {
+      "url": "https://your-custom-sse-url",
+      "headers": {
+        "X-HEURIST-API-KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```

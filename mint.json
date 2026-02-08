@@ -66,8 +66,8 @@
       "group": "Heurist Mesh",
       "pages": [
         "heurist-mesh/overview",
-        "heurist-mesh/rest-api",
-        "heurist-mesh/api-playground"
+        "heurist-mesh/api",
+        "heurist-mesh/mcp"
       ]
     },
     {
