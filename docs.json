@@ -1,0 +1,108 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Heurist AI",
+  "colors": {
+    "primary": "#877DFF",
+    "light": "#877DFF",
+    "dark": "#877DFF"
+  },
+  "logo": {
+    "dark": "/images/logo/dark.svg",
+    "light": "/images/logo/light.svg"
+  },
+  "favicon": "/images/logo/favicon.svg",
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Support",
+      "href": "mailto:team@heurist.xyz"
+    }
+  },
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "X",
+          "icon": "x-twitter",
+          "href": "https://twitter.com/heurist_ai"
+        },
+        {
+          "anchor": "GitHub",
+          "icon": "github",
+          "href": "https://github.com/heurist-network"
+        },
+        {
+          "anchor": "Discord",
+          "icon": "discord",
+          "href": "https://discord.com/invite/heuristai"
+        },
+        {
+          "anchor": "Telegram",
+          "icon": "telegram",
+          "href": "https://t.me/heurist_ai"
+        },
+        {
+          "anchor": "Medium",
+          "icon": "medium",
+          "href": "https://medium.com/@heuristai"
+        }
+      ]
+    },
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": ["introduction", "ask-heurist"]
+      },
+      {
+        "group": "Overview",
+        "pages": [
+          "protocol-overview/tokenomics",
+          "protocol-overview/credits",
+          "protocol-overview/stake",
+          "protocol-overview/brand-assets",
+          "protocol-overview/contract-addresses"
+        ]
+      },
+      {
+        "group": "Heurist Mesh",
+        "pages": [
+          "heurist-mesh/overview",
+          "heurist-mesh/api",
+          "heurist-mesh/mcp"
+        ]
+      },
+      {
+        "group": "X402 Products",
+        "pages": [
+          "x402-products/facilitator",
+          "x402-products/vending-machine"
+        ]
+      },
+      {
+        "group": "LLM Gateway",
+        "pages": [
+          "llm-gateway/introduction",
+          "llm-gateway/supported-models",
+          "llm-gateway/endpoint",
+          "llm-gateway/llm-tool-calling",
+          "llm-gateway/embedding"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/heurist_ai",
+      "github": "https://github.com/heurist-network",
+      "discord": "https://discord.com/invite/heuristai",
+      "telegram": "https://t.me/heurist_ai",
+      "medium": "https://medium.com/@heuristai"
+    }
+  },
+  "api": {
+    "playground": {
+      "proxy": false
+    }
+  }
+}
